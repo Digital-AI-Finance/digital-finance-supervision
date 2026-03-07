@@ -694,6 +694,47 @@ section {
     .hero-buttons { flex-direction: column; align-items: center; }
 }
 
+/* ---- Booklet banner ---- */
+.booklet-banner {
+    display: flex; align-items: center; justify-content: center;
+    gap: 20px; padding: 16px 20px;
+    background: linear-gradient(90deg, #FFD700, #DAA520);
+    text-align: center;
+}
+.booklet-banner span {
+    font-size: 1.05rem; font-weight: 700; color: #1a1a2e;
+}
+.booklet-banner .btn-download {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #003399; color: white; padding: 10px 24px;
+    border-radius: 6px; text-decoration: none; font-weight: 700;
+    transition: background 0.2s;
+}
+.booklet-banner .btn-download:hover { background: #002266; }
+
+/* ---- News ---- */
+.news-list { max-width: 820px; margin: 0 auto; }
+.news-item {
+    display: flex; gap: 18px; padding: 20px 0;
+    border-bottom: 1px solid var(--gray-200);
+}
+.news-item:last-child { border-bottom: none; }
+.news-date-badge {
+    flex-shrink: 0; background: var(--primary); color: var(--white);
+    padding: 6px 14px; border-radius: 6px; font-size: .78rem;
+    font-weight: 700; height: fit-content; white-space: nowrap;
+}
+.news-body h3 { font-size: 1.05rem; color: var(--gray-800); margin-bottom: 4px; }
+.news-body p { font-size: .92rem; color: var(--gray-600); line-height: 1.6; }
+.news-type {
+    display: inline-block; font-size: .7rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: .4px; padding: 2px 8px;
+    border-radius: 10px; margin-bottom: 6px;
+}
+.news-type-announcement { background: var(--secondary); color: var(--dark); }
+.news-type-call { background: var(--primary); color: var(--white); }
+.news-type-update { background: var(--gray-200); color: var(--gray-800); }
+
 /* ---- Print ---- */
 @media print {
     .sidebar, .topbar, .countdown, .hero-buttons, .btn { display: none !important; }
@@ -841,6 +882,7 @@ def build_sidebar() -> str:
         ("topics", "Topics"),
         ("venue", "Venue"),
         ("partners", "Partners"),
+        ("news", "News"),
     ]
     items = "\n".join(
         f'<li><a href="#{lid}">{label}</a></li>' for lid, label in links
@@ -861,7 +903,10 @@ def build_topbar(conf: dict) -> str:
     return f"""
 <header class="topbar">
   <span class="topbar-title">{name}</span>
-  <a href="#" class="btn btn-gold">Register</a>
+  <div style="display:flex;gap:10px;align-items:center;">
+    <a href="booklet.pdf" class="btn" style="background:#FFD700;color:#1a1a2e;" download>Download Booklet</a>
+    <a href="registration.html" class="btn btn-gold">Register</a>
+  </div>
 </header>
 """
 
@@ -887,6 +932,52 @@ def build_hero(conf: dict) -> str:
     <div class="hero-buttons">
       <a href="#cfp" class="btn btn-gold">Submit Abstract</a>
       <a href="#program" class="btn btn-outline">View Program</a>
+    </div>
+  </div>
+</section>
+"""
+
+
+def build_booklet_banner() -> str:
+    return """
+<div class="booklet-banner">
+  <span>Download the Workshop Booklet</span>
+  <a href="booklet.pdf" class="btn-download" download>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    Download PDF
+  </a>
+</div>
+"""
+
+
+def build_news(news_data: list) -> str:
+    if not news_data:
+        return ""
+    items = []
+    for n in news_data:
+        date = n.get("date", "")
+        title = n.get("title", "")
+        content = n.get("content", "")
+        ntype = n.get("type", "update")
+        type_cls = f"news-type-{ntype}"
+        items.append(f"""
+      <div class="news-item">
+        <div class="news-date-badge">{date}</div>
+        <div class="news-body">
+          <span class="news-type {type_cls}">{ntype}</span>
+          <h3>{title}</h3>
+          <p>{content}</p>
+        </div>
+      </div>""")
+    return f"""
+<section id="news" class="section-padding section-alt">
+  <div class="container">
+    <div class="section-header">
+      <h2>Latest News</h2>
+      <p>Stay up to date with workshop announcements and updates.</p>
+    </div>
+    <div class="news-list">
+      {"".join(items)}
     </div>
   </div>
 </section>
@@ -1292,6 +1383,8 @@ def main():
     program_data = load_json("program.json", {"days": [], "call_for_papers": {}})
     partners_data = load_json("partners.json", DEFAULT_PARTNERS)
     topics_data = load_json("topics.json", DEFAULT_TOPICS)
+    news_raw = load_json("news.json", {"news": []})
+    news_data = news_raw.get("news", [])
 
     # If partners.json existed but has no keys we expect, merge defaults
     if not partners_data.get("beneficiary_partners") and not partners_data.get("associated_partners"):
@@ -1305,6 +1398,7 @@ def main():
         build_topbar(conf),
         '<div class="main-content">',
         build_hero(conf),
+        build_booklet_banner(),
         build_stats(),
         build_about(),
         build_cfp(program_data),
@@ -1314,6 +1408,7 @@ def main():
         build_topics(topics_data),
         build_venue(conf),
         build_partners(partners_data),
+        build_news(news_data),
         "</div>",
         build_footer(conf),
         build_closing(),

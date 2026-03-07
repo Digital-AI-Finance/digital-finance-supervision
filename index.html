@@ -552,6 +552,47 @@ section {
     .hero-buttons { flex-direction: column; align-items: center; }
 }
 
+/* ---- Booklet banner ---- */
+.booklet-banner {
+    display: flex; align-items: center; justify-content: center;
+    gap: 20px; padding: 16px 20px;
+    background: linear-gradient(90deg, #FFD700, #DAA520);
+    text-align: center;
+}
+.booklet-banner span {
+    font-size: 1.05rem; font-weight: 700; color: #1a1a2e;
+}
+.booklet-banner .btn-download {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #003399; color: white; padding: 10px 24px;
+    border-radius: 6px; text-decoration: none; font-weight: 700;
+    transition: background 0.2s;
+}
+.booklet-banner .btn-download:hover { background: #002266; }
+
+/* ---- News ---- */
+.news-list { max-width: 820px; margin: 0 auto; }
+.news-item {
+    display: flex; gap: 18px; padding: 20px 0;
+    border-bottom: 1px solid var(--gray-200);
+}
+.news-item:last-child { border-bottom: none; }
+.news-date-badge {
+    flex-shrink: 0; background: var(--primary); color: var(--white);
+    padding: 6px 14px; border-radius: 6px; font-size: .78rem;
+    font-weight: 700; height: fit-content; white-space: nowrap;
+}
+.news-body h3 { font-size: 1.05rem; color: var(--gray-800); margin-bottom: 4px; }
+.news-body p { font-size: .92rem; color: var(--gray-600); line-height: 1.6; }
+.news-type {
+    display: inline-block; font-size: .7rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: .4px; padding: 2px 8px;
+    border-radius: 10px; margin-bottom: 6px;
+}
+.news-type-announcement { background: var(--secondary); color: var(--dark); }
+.news-type-call { background: var(--primary); color: var(--white); }
+.news-type-update { background: var(--gray-200); color: var(--gray-800); }
+
 /* ---- Print ---- */
 @media print {
     .sidebar, .topbar, .countdown, .hero-buttons, .btn { display: none !important; }
@@ -579,6 +620,7 @@ section {
 <li><a href="#topics">Topics</a></li>
 <li><a href="#venue">Venue</a></li>
 <li><a href="#partners">Partners</a></li>
+<li><a href="#news">News</a></li>
   </ul>
   <div class="sidebar-footer">MSCA DIGITAL Network<br>&copy; 2024 &ndash; 2027</div>
 </nav>
@@ -586,7 +628,10 @@ section {
 
 <header class="topbar">
   <span class="topbar-title">Digital Finance for Supervision</span>
-  <a href="#" class="btn btn-gold">Register</a>
+  <div style="display:flex;gap:10px;align-items:center;">
+    <a href="booklet.pdf" class="btn" style="background:#FFD700;color:#1a1a2e;" download>Download Booklet</a>
+    <a href="registration.html" class="btn btn-gold">Register</a>
+  </div>
 </header>
 
 <div class="main-content">
@@ -608,6 +653,15 @@ section {
     </div>
   </div>
 </section>
+
+
+<div class="booklet-banner">
+  <span>Download the Workshop Booklet</span>
+  <a href="booklet.pdf" class="btn-download" download>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    Download PDF
+  </a>
+</div>
 
 <div class="stats-bar"><div class="stat-item"><span class="stat-num" data-target="30+">0</span><span class="stat-label">Participants</span></div>
 <div class="stat-item"><span class="stat-num" data-target="6">0</span><span class="stat-label">Research Talks</span></div>
@@ -1061,6 +1115,43 @@ section {
           <div class="partner-country">Italy</div>
           
         </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="news" class="section-padding section-alt">
+  <div class="container">
+    <div class="section-header">
+      <h2>Latest News</h2>
+      <p>Stay up to date with workshop announcements and updates.</p>
+    </div>
+    <div class="news-list">
+      
+      <div class="news-item">
+        <div class="news-date-badge">2026-03-07</div>
+        <div class="news-body">
+          <span class="news-type news-type-announcement">announcement</span>
+          <h3>Workshop Announced</h3>
+          <p>We are pleased to announce the Digital Finance for Supervision workshop, organized by the MSCA DIGITAL network at the European Central Bank on December 3, 2026.</p>
+        </div>
+      </div>
+      <div class="news-item">
+        <div class="news-date-badge">2026-03-07</div>
+        <div class="news-body">
+          <span class="news-type news-type-call">call</span>
+          <h3>Call for Papers Open</h3>
+          <p>We invite researchers to submit extended abstracts on AI/ML for bank supervision, NLP for regulatory reporting, and LLMs in supervision. Deadline: October 1, 2026.</p>
+        </div>
+      </div>
+      <div class="news-item">
+        <div class="news-date-badge">2026-03-07</div>
+        <div class="news-body">
+          <span class="news-type news-type-update">update</span>
+          <h3>Website Launch</h3>
+          <p>The official workshop website is now live. Visit for program details, committee information, and registration.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>

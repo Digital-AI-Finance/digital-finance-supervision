@@ -1,0 +1,22 @@
+{
+  "news": [
+    {
+      "date": "2026-03-07",
+      "title": "Workshop Announced",
+      "content": "We are pleased to announce the Digital Finance for Supervision workshop, organized by the MSCA DIGITAL network at the European Central Bank on December 3, 2026.",
+      "type": "announcement"
+    },
+    {
+      "date": "2026-03-07",
+      "title": "Call for Papers Open",
+      "content": "We invite researchers to submit extended abstracts on AI/ML for bank supervision, NLP for regulatory reporting, and LLMs in supervision. Deadline: October 1, 2026.",
+      "type": "call"
+    },
+    {
+      "date": "2026-03-07",
+      "title": "Website Launch",
+      "content": "The official workshop website is now live. Visit for program details, committee information, and registration.",
+      "type": "update"
+    }
+  ]
+}

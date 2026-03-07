@@ -17,8 +17,10 @@
   },
   "website": {
     "url": "https://digital-ai-finance.github.io/digital-finance-supervision/",
-    "repo": "Digital-AI-Finance/digital-finance-supervision"
+    "repo": "Digital-AI-Finance/digital-finance-supervision",
+    "registration_url": "registration.html"
   },
+  "logo": "",
   "branding": {
     "primary_color": "#003399",
     "secondary_color": "#FFD700",
