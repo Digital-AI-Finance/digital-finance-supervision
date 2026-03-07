@@ -1,0 +1,172 @@
+{
+  "partners": [
+    {
+      "name": "University of Twente",
+      "acronym": "UTwente",
+      "country": "Netherlands",
+      "logo": "utwente.svg",
+      "website": "https://www.utwente.nl",
+      "is_coordinator": true
+    },
+    {
+      "name": "WU Vienna University of Economics and Business",
+      "acronym": "WU",
+      "country": "Austria",
+      "logo": "wu_wien.svg",
+      "website": "https://www.wu.ac.at"
+    },
+    {
+      "name": "University of Naples Federico II",
+      "acronym": "UNINA",
+      "country": "Italy",
+      "logo": "unina.svg",
+      "website": "https://www.unina.it"
+    },
+    {
+      "name": "Kaunas University of Technology",
+      "acronym": "KTU",
+      "country": "Lithuania",
+      "logo": "ktu.svg",
+      "website": "https://en.ktu.edu"
+    },
+    {
+      "name": "Bucharest University of Economic Studies",
+      "acronym": "ASE",
+      "country": "Romania",
+      "logo": "ase.svg",
+      "website": "https://www.ase.ro"
+    },
+    {
+      "name": "Babes-Bolyai University",
+      "acronym": "BBU",
+      "country": "Romania",
+      "logo": "bbu.svg",
+      "website": "https://www.ubbcluj.ro"
+    },
+    {
+      "name": "Cardo AI",
+      "acronym": "CARDO",
+      "country": "Italy",
+      "logo": "cardo.svg",
+      "website": "https://cardoai.com",
+      "type": "SME"
+    },
+    {
+      "name": "Poznan University of Economics and Business",
+      "acronym": "UEP",
+      "country": "Poland",
+      "logo": "uep.svg",
+      "website": "https://ue.poznan.pl"
+    },
+    {
+      "name": "European Central Bank",
+      "acronym": "ECB",
+      "country": "Germany",
+      "logo": "ecb.svg",
+      "website": "https://www.ecb.europa.eu",
+      "type": "associated_partner",
+      "is_host": true
+    },
+    {
+      "name": "Bern University of Applied Sciences",
+      "acronym": "BFH",
+      "country": "Switzerland",
+      "logo": "bfh.svg",
+      "website": "https://www.bfh.ch"
+    },
+    {
+      "name": "Deutsche Bank",
+      "acronym": "DB",
+      "country": "Germany",
+      "logo": "db.svg",
+      "website": "https://www.db.com",
+      "type": "associated_partner"
+    },
+    {
+      "name": "Raiffeisen Bank International",
+      "acronym": "RBI",
+      "country": "Austria",
+      "logo": "rbi.svg",
+      "website": "https://www.rbinternational.com",
+      "type": "associated_partner"
+    },
+    {
+      "name": "Swedbank",
+      "acronym": "SWED",
+      "country": "Lithuania",
+      "logo": "swedbank.svg",
+      "website": "https://www.swedbank.com",
+      "type": "associated_partner"
+    },
+    {
+      "name": "Intesa Sanpaolo",
+      "acronym": "ISP",
+      "country": "Italy",
+      "logo": "intesa.svg",
+      "website": "https://www.intesasanpaolo.com",
+      "type": "associated_partner"
+    },
+    {
+      "name": "Deloitte",
+      "acronym": "DEL",
+      "country": "Italy",
+      "logo": "deloitte.svg",
+      "website": "https://www.deloitte.com",
+      "type": "associated_partner"
+    },
+    {
+      "name": "Fraunhofer Institute for Industrial Mathematics",
+      "acronym": "ITWM",
+      "country": "Germany",
+      "logo": "fraunhofer.svg",
+      "website": "https://www.itwm.fraunhofer.de",
+      "type": "associated_partner"
+    },
+    {
+      "name": "EIT Digital",
+      "acronym": "EIT",
+      "country": "Belgium",
+      "logo": "eit.svg",
+      "website": "https://www.eitdigital.eu",
+      "type": "associated_partner"
+    },
+    {
+      "name": "Athena Research Centre",
+      "acronym": "ARC",
+      "country": "Greece",
+      "logo": "arc.svg",
+      "website": "https://www.athenarc.gr",
+      "type": "associated_partner"
+    },
+    {
+      "name": "Royalton Partners",
+      "acronym": "RP",
+      "country": "Luxembourg",
+      "logo": "royalton.svg",
+      "website": "https://www.royaltonpartners.com",
+      "type": "associated_partner"
+    },
+    {
+      "name": "Bank for International Settlements",
+      "acronym": "BIS",
+      "country": "Switzerland",
+      "logo": "bis.svg",
+      "website": "https://www.bis.org",
+      "type": "associated_partner"
+    },
+    {
+      "name": "University of Pavia",
+      "acronym": "UNIPV",
+      "country": "Italy",
+      "logo": "unipv.svg",
+      "website": "https://www.unipv.it"
+    },
+    {
+      "name": "University of Milan",
+      "acronym": "UNIMI",
+      "country": "Italy",
+      "logo": "unimi.svg",
+      "website": "https://www.unimi.it"
+    }
+  ]
+}

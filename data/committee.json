@@ -1,0 +1,87 @@
+{
+  "organizing_committee": [
+    {
+      "name": "Theodoros Mastrokostopoulos",
+      "role": "ECB Lead Organizer",
+      "affiliation": "European Central Bank",
+      "affiliation_short": "ECB",
+      "photo": "theodoros_mastrokostopoulos.jpg",
+      "bio": "Senior expert at the European Central Bank working on supervisory technology and digital finance innovation.",
+      "country": "Germany"
+    },
+    {
+      "name": "Filippo Bartoli",
+      "role": "ECB Co-organizer",
+      "affiliation": "European Central Bank",
+      "affiliation_short": "ECB",
+      "photo": "filippo_bartoli.jpg",
+      "bio": "Expert at the European Central Bank contributing to digital finance research and supervisory technology.",
+      "country": "Germany"
+    },
+    {
+      "name": "Joerg Osterrieder",
+      "role": "DIGITAL Network Coordinator",
+      "affiliation": "University of Twente, Netherlands",
+      "affiliation_short": "UTwente",
+      "photo": "joerg_osterrieder.jpg",
+      "bio": "Professor and Coordinator of the MSCA Industrial Doctoral Network on Digital Finance (DIGITAL). Expert in quantitative finance, machine learning, and digital finance.",
+      "email": "joerg.osterrieder@utwente.nl",
+      "website": "https://www.digital-finance-msca.com",
+      "country": "Netherlands"
+    },
+    {
+      "name": "Daniel Pele",
+      "role": "Committee Member",
+      "affiliation": "Bucharest University of Economic Studies, Romania",
+      "affiliation_short": "ASE Bucharest",
+      "photo": "daniel_pele.jpg",
+      "bio": "Professor at the Bucharest University of Economic Studies. Research interests in financial econometrics and digital finance.",
+      "country": "Romania"
+    },
+    {
+      "name": "Wolfgang Haerdle",
+      "role": "Committee Member",
+      "affiliation": "Humboldt-Universitaet zu Berlin / WU Vienna",
+      "affiliation_short": "HU Berlin / WU Wien",
+      "photo": "wolfgang_haerdle.jpg",
+      "bio": "Professor of Statistics and expert in computational statistics, quantitative finance, and machine learning.",
+      "country": "Germany/Austria"
+    },
+    {
+      "name": "Maria Iannario",
+      "role": "Committee Member",
+      "affiliation": "University of Naples Federico II, Italy",
+      "affiliation_short": "UNINA",
+      "photo": "maria_iannario.jpg",
+      "bio": "Professor at the University of Naples Federico II. Research interests in statistical modeling and digital finance applications.",
+      "country": "Italy"
+    },
+    {
+      "name": "Codruta Mare",
+      "role": "Committee Member",
+      "affiliation": "Babes-Bolyai University, Romania",
+      "affiliation_short": "BBU",
+      "photo": "codruta_mare.jpg",
+      "bio": "Professor at Babes-Bolyai University. Research in financial econometrics and digital finance.",
+      "country": "Romania"
+    },
+    {
+      "name": "Claudia Tarantola",
+      "role": "Committee Member",
+      "affiliation": "University of Milan, Italy",
+      "affiliation_short": "UNIMI",
+      "photo": "claudia_tarantola.jpg",
+      "bio": "Full Professor of Statistics at the University of Milan. Associate Editor of JASA. Research in Bayesian statistics and quantitative finance.",
+      "country": "Italy"
+    },
+    {
+      "name": "Alessandra Tanda",
+      "role": "Committee Member",
+      "affiliation": "University of Pavia, Italy",
+      "affiliation_short": "UNIPV",
+      "photo": "alessandra_tanda.jpg",
+      "bio": "Associate Professor of Banking and Finance at the University of Pavia. Author of 'FinTech, BigTech and Banks'. Research in fintech and digital finance.",
+      "country": "Italy"
+    }
+  ]
+}

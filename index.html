@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Digital Finance for Supervision - MSCA DIGITAL Network Workshop at the European Central Bank">
+<meta name="keywords" content="digital finance, supervision, ECB, SupTech, AI, machine learning, NLP, MSCA, DIGITAL network">
+<meta name="author" content="MSCA DIGITAL Network">
+<meta name="theme-color" content="#003399">
+<meta property="og:title" content="Digital Finance for Supervision">
+<meta property="og:description" content="MSCA DIGITAL Network Workshop at the European Central Bank">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='18' width='100' height='100' fill='%23003399'/><text x='50' y='62' font-size='42' text-anchor='middle' fill='%23FFD700' font-family='sans-serif' font-weight='bold'>DF</text></svg>">
+<title>Digital Finance for Supervision</title>
+<style>
+
+:root {
+    --primary: #003399;
+    --secondary: #FFD700;
+    --accent: #2E5090;
+    --dark: #1a1a2e;
+    --light: #f5f5f5;
+    --white: #ffffff;
+    --gray-100: #f8f9fa;
+    --gray-200: #e9ecef;
+    --gray-300: #dee2e6;
+    --gray-600: #6c757d;
+    --gray-800: #343a40;
+    --sidebar-w: 220px;
+    --topbar-h: 56px;
+    --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,.08);
+    --shadow: 0 4px 12px rgba(0,0,0,.1);
+    --shadow-lg: 0 8px 30px rgba(0,0,0,.15);
+    --radius: 8px;
+    --transition: .25s ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font);
+    color: var(--gray-800);
+    background: var(--white);
+    line-height: 1.65;
+}
+
+a { color: var(--primary); text-decoration: none; }
+a:hover { color: var(--accent); }
+
+img { max-width: 100%; height: auto; }
+
+section {
+    scroll-margin-top: calc(var(--topbar-h) + 24px);
+}
+
+/* ---- Sidebar ---- */
+.sidebar {
+    position: fixed;
+    top: 0; left: 0;
+    width: var(--sidebar-w);
+    height: 100vh;
+    background: var(--dark);
+    color: var(--gray-200);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    overflow-y: auto;
+    border-right: 2px solid var(--secondary);
+}
+
+.sidebar-brand {
+    padding: 22px 18px 14px;
+    font-size: .82rem;
+    font-weight: 700;
+    letter-spacing: .6px;
+    text-transform: uppercase;
+    color: var(--secondary);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.sidebar-nav { list-style: none; padding: 10px 0; flex: 1; }
+.sidebar-nav li a {
+    display: block;
+    padding: 9px 20px;
+    font-size: .82rem;
+    color: var(--gray-300);
+    transition: background var(--transition), color var(--transition), border-left var(--transition);
+    border-left: 3px solid transparent;
+}
+.sidebar-nav li a:hover,
+.sidebar-nav li a.active {
+    background: rgba(255,215,0,.08);
+    color: var(--secondary);
+    border-left-color: var(--secondary);
+}
+
+.sidebar-footer {
+    padding: 14px 18px;
+    font-size: .7rem;
+    color: var(--gray-600);
+    border-top: 1px solid rgba(255,255,255,.06);
+}
+
+/* ---- Top bar ---- */
+.topbar {
+    position: fixed;
+    top: 0;
+    left: var(--sidebar-w);
+    right: 0;
+    height: var(--topbar-h);
+    background: var(--white);
+    border-bottom: 1px solid var(--gray-200);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    z-index: 900;
+    box-shadow: var(--shadow-sm);
+}
+
+.topbar-title {
+    font-size: .92rem;
+    font-weight: 600;
+    color: var(--primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.btn {
+    display: inline-block;
+    padding: 9px 22px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: .85rem;
+    border: none;
+    cursor: pointer;
+    transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+    text-decoration: none;
+}
+.btn:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
+
+.btn-gold {
+    background: var(--secondary);
+    color: var(--dark);
+}
+.btn-gold:hover { background: #e6c200; color: var(--dark); }
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+}
+.btn-primary:hover { background: var(--accent); color: var(--white); }
+
+.btn-outline {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid var(--secondary);
+}
+.btn-outline:hover { background: var(--secondary); color: var(--dark); }
+
+/* ---- Main content ---- */
+.main-content {
+    margin-left: var(--sidebar-w);
+    margin-top: 0;
+}
+
+.section-padding { padding: 72px 48px; }
+.section-alt { background: var(--gray-100); }
+
+.section-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+.section-header h2 {
+    font-size: 1.9rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+}
+.section-header h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--secondary);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+.section-header p {
+    color: var(--gray-600);
+    font-size: 1rem;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.container { max-width: 1100px; margin: 0 auto; }
+
+/* ---- Hero ---- */
+.hero {
+    position: relative;
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 40px 80px;
+    margin-top: var(--topbar-h);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+    color: var(--white);
+    overflow: hidden;
+}
+.hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(46,80,144,.3) 0%, transparent 60%),
+                radial-gradient(circle at 80% 30%, rgba(255,215,0,.08) 0%, transparent 50%);
+}
+.hero-content { position: relative; z-index: 1; max-width: 780px; }
+.hero h1 { font-size: 2.7rem; font-weight: 800; line-height: 1.15; margin-bottom: 14px; }
+.hero .tagline { font-size: 1.15rem; opacity: .92; margin-bottom: 8px; }
+.hero .date-venue {
+    font-size: 1rem;
+    margin-bottom: 28px;
+    opacity: .85;
+}
+.hero .date-venue strong { color: var(--secondary); }
+
+.countdown {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+.countdown-unit {
+    background: rgba(255,255,255,.1);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255,215,0,.25);
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    min-width: 78px;
+    text-align: center;
+}
+.countdown-unit .num {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--secondary);
+    line-height: 1;
+}
+.countdown-unit .label {
+    display: block;
+    font-size: .7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 4px;
+    opacity: .75;
+}
+
+.hero-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* ---- Stats bar ---- */
+.stats-bar {
+    background: var(--primary);
+    color: var(--white);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    padding: 32px 20px;
+}
+.stat-item {
+    text-align: center;
+    padding: 10px 28px;
+    min-width: 130px;
+}
+.stat-num {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--secondary);
+    line-height: 1;
+}
+.stat-label {
+    font-size: .78rem;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    margin-top: 4px;
+    opacity: .85;
+}
+
+/* ---- About ---- */
+.about-text { max-width: 820px; margin: 0 auto; font-size: 1.05rem; line-height: 1.8; color: var(--gray-800); text-align: center; }
+.about-text p + p { margin-top: 16px; }
+
+/* ---- Call for papers ---- */
+.cfp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: start; }
+.cfp-topics { list-style: none; }
+.cfp-topics li {
+    padding: 8px 0 8px 28px;
+    position: relative;
+    font-size: .95rem;
+}
+.cfp-topics li::before {
+    content: '\2713';
+    position: absolute;
+    left: 0;
+    color: var(--secondary);
+    font-weight: 700;
+}
+.cfp-info { background: var(--white); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow-sm); border-left: 4px solid var(--secondary); }
+.cfp-info h3 { color: var(--primary); margin-bottom: 12px; font-size: 1.1rem; }
+.cfp-info p { font-size: .92rem; margin-bottom: 10px; }
+.cfp-deadline { font-size: 1.15rem; font-weight: 700; color: var(--primary); }
+
+/* ---- Committee ---- */
+.committee-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.member-card {
+    text-align: center;
+    padding: 28px 18px;
+    border-radius: var(--radius);
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+.member-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.member-photo {
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 14px;
+    object-fit: cover;
+    border: 3px solid var(--gray-200);
+}
+.member-initials {
+    width: 100px; height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--white);
+    border: 3px solid rgba(255,255,255,.3);
+}
+.member-name { font-size: 1rem; font-weight: 700; color: var(--gray-800); margin-bottom: 2px; }
+.member-role { font-size: .8rem; color: var(--secondary); font-weight: 600; margin-bottom: 4px; text-transform: uppercase; letter-spacing: .4px; }
+.member-aff { font-size: .82rem; color: var(--gray-600); }
+
+/* ---- Dates ---- */
+.dates-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.date-card {
+    text-align: center;
+    padding: 28px 16px;
+    border-radius: var(--radius);
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+    border-top: 4px solid var(--primary);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+.date-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.date-card.highlight { border-top-color: var(--secondary); }
+.date-card .dc-icon { font-size: 1.8rem; margin-bottom: 8px; }
+.date-card .dc-date { font-size: 1.15rem; font-weight: 700; color: var(--primary); margin-bottom: 6px; }
+.date-card .dc-label { font-size: .85rem; color: var(--gray-600); }
+
+/* ---- Program ---- */
+.program-table { width: 100%; border-collapse: collapse; background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); }
+.program-table th { background: var(--primary); color: var(--white); padding: 14px 18px; text-align: left; font-size: .82rem; text-transform: uppercase; letter-spacing: .5px; }
+.program-table td { padding: 14px 18px; border-bottom: 1px solid var(--gray-200); font-size: .92rem; vertical-align: top; }
+.program-table tr:last-child td { border-bottom: none; }
+.program-table tr:hover td { background: var(--gray-100); }
+.type-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: .72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .3px;
+}
+.type-keynote  { background: var(--secondary); color: var(--dark); }
+.type-session  { background: var(--primary); color: var(--white); }
+.type-break    { background: var(--gray-200); color: var(--gray-600); }
+.type-panel    { background: var(--accent); color: var(--white); }
+.type-ceremony { background: var(--dark); color: var(--secondary); }
+.program-desc { font-size: .82rem; color: var(--gray-600); margin-top: 4px; }
+
+/* ---- Topics ---- */
+.topics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.topic-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 32px 24px;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition), box-shadow var(--transition);
+    border-top: 4px solid var(--primary);
+}
+.topic-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.topic-icon { color: var(--primary); margin-bottom: 16px; }
+.topic-card h3 { color: var(--primary); font-size: 1.1rem; margin-bottom: 10px; }
+.topic-card p { font-size: .9rem; color: var(--gray-600); margin-bottom: 14px; }
+.topic-bullets { list-style: none; }
+.topic-bullets li {
+    padding: 4px 0 4px 20px;
+    position: relative;
+    font-size: .85rem;
+    color: var(--gray-800);
+}
+.topic-bullets li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 12px;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--secondary);
+}
+
+/* ---- Venue ---- */
+.venue-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: start; }
+.venue-info h3 { color: var(--primary); margin-bottom: 12px; font-size: 1.15rem; }
+.venue-info p { font-size: .92rem; margin-bottom: 12px; color: var(--gray-800); }
+.venue-address { background: var(--white); padding: 18px; border-radius: var(--radius); box-shadow: var(--shadow-sm); border-left: 4px solid var(--secondary); margin-bottom: 18px; }
+.venue-address strong { color: var(--primary); }
+.venue-map { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); min-height: 320px; }
+.venue-map iframe { width: 100%; height: 320px; border: 0; }
+.venue-practical { margin-top: 18px; }
+.venue-practical h4 { font-size: .95rem; color: var(--accent); margin-bottom: 6px; }
+.venue-practical ul { list-style: disc inside; font-size: .88rem; color: var(--gray-600); }
+.venue-practical ul li { margin-bottom: 4px; }
+
+/* ---- Partners ---- */
+.partners-section-label {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    margin-bottom: 18px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--gray-200);
+}
+.partners-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 18px; margin-bottom: 40px; }
+.partner-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 20px 14px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition), box-shadow var(--transition);
+    border: 1px solid var(--gray-200);
+}
+.partner-card:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+.partner-card.host-card { border-color: var(--secondary); border-width: 2px; }
+.partner-logo-placeholder {
+    width: 70px; height: 70px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .85rem;
+    font-weight: 700;
+    color: var(--white);
+}
+.partner-logo-img {
+    width: 70px; height: 70px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    object-fit: contain;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+}
+.partner-name { font-size: .85rem; font-weight: 600; color: var(--gray-800); margin-bottom: 2px; }
+.partner-country { font-size: .75rem; color: var(--gray-600); }
+.host-badge {
+    display: inline-block;
+    background: var(--secondary);
+    color: var(--dark);
+    font-size: .65rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 8px;
+    margin-top: 6px;
+    text-transform: uppercase;
+    letter-spacing: .4px;
+}
+
+/* ---- Footer ---- */
+.footer {
+    background: var(--dark);
+    color: var(--gray-300);
+    padding: 48px 48px 28px;
+}
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 36px; margin-bottom: 28px; }
+.footer h4 { color: var(--secondary); font-size: .9rem; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 12px; }
+.footer p, .footer a { font-size: .82rem; color: var(--gray-300); }
+.footer a:hover { color: var(--secondary); }
+.footer-disclaimer {
+    font-size: .75rem;
+    color: var(--gray-600);
+    border-top: 1px solid rgba(255,255,255,.06);
+    padding-top: 18px;
+    margin-top: 18px;
+    line-height: 1.6;
+}
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.06);
+    padding-top: 18px;
+    text-align: center;
+    font-size: .75rem;
+    color: var(--gray-600);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+    .committee-grid { grid-template-columns: repeat(2, 1fr); }
+    .topics-grid    { grid-template-columns: repeat(2, 1fr); }
+    .dates-grid     { grid-template-columns: repeat(2, 1fr); }
+    .venue-grid     { grid-template-columns: 1fr; }
+    .cfp-grid       { grid-template-columns: 1fr; }
+    .footer-grid    { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    .sidebar { display: none; }
+    .topbar { left: 0; }
+    .main-content { margin-left: 0; }
+    .section-padding { padding: 48px 20px; }
+    .hero { padding: 80px 20px 60px; min-height: 420px; }
+    .hero h1 { font-size: 1.8rem; }
+    .countdown { gap: 10px; }
+    .countdown-unit { padding: 10px 12px; min-width: 60px; }
+    .countdown-unit .num { font-size: 1.3rem; }
+    .committee-grid { grid-template-columns: 1fr; }
+    .topics-grid    { grid-template-columns: 1fr; }
+    .dates-grid     { grid-template-columns: 1fr 1fr; }
+    .stats-bar { gap: 6px; }
+    .stat-item { padding: 8px 16px; min-width: 100px; }
+    .stat-num { font-size: 1.5rem; }
+    .footer { padding: 36px 20px 20px; }
+}
+
+@media (max-width: 480px) {
+    .dates-grid { grid-template-columns: 1fr; }
+    .hero-buttons { flex-direction: column; align-items: center; }
+}
+
+/* ---- Print ---- */
+@media print {
+    .sidebar, .topbar, .countdown, .hero-buttons, .btn { display: none !important; }
+    .main-content { margin-left: 0 !important; }
+    .hero { min-height: auto; padding: 30px; }
+    section { page-break-inside: avoid; }
+    .section-padding { padding: 24px 0; }
+    body { font-size: 11pt; }
+}
+
+</style>
+</head>
+<body>
+
+
+<nav class="sidebar" aria-label="Main navigation">
+  <div class="sidebar-brand">DFS 2026</div>
+  <ul class="sidebar-nav">
+    <li><a href="#hero">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#cfp">Call for Papers</a></li>
+<li><a href="#committee">Committee</a></li>
+<li><a href="#dates">Key Dates</a></li>
+<li><a href="#program">Program</a></li>
+<li><a href="#topics">Topics</a></li>
+<li><a href="#venue">Venue</a></li>
+<li><a href="#partners">Partners</a></li>
+  </ul>
+  <div class="sidebar-footer">MSCA DIGITAL Network<br>&copy; 2024 &ndash; 2027</div>
+</nav>
+
+
+<header class="topbar">
+  <span class="topbar-title">Digital Finance for Supervision</span>
+  <a href="#" class="btn btn-gold">Register</a>
+</header>
+
+<div class="main-content">
+
+<section id="hero" class="hero">
+  <div class="hero-content">
+    <h1>Digital Finance for Supervision</h1>
+    <p class="tagline">MSCA DIGITAL Network Workshop at the European Central Bank</p>
+    <p class="date-venue"><strong>December 3, 2026</strong> &mdash; European Central Bank, Frankfurt am Main</p>
+    <div class="countdown">
+      <div class="countdown-unit"><span class="num" id="cd-days">0</span><span class="label">Days</span></div>
+      <div class="countdown-unit"><span class="num" id="cd-hours">0</span><span class="label">Hours</span></div>
+      <div class="countdown-unit"><span class="num" id="cd-mins">0</span><span class="label">Minutes</span></div>
+      <div class="countdown-unit"><span class="num" id="cd-secs">0</span><span class="label">Seconds</span></div>
+    </div>
+    <div class="hero-buttons">
+      <a href="#cfp" class="btn btn-gold">Submit Abstract</a>
+      <a href="#program" class="btn btn-outline">View Program</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar"><div class="stat-item"><span class="stat-num" data-target="30+">0</span><span class="stat-label">Participants</span></div>
+<div class="stat-item"><span class="stat-num" data-target="6">0</span><span class="stat-label">Research Talks</span></div>
+<div class="stat-item"><span class="stat-num" data-target="2">0</span><span class="stat-label">Keynotes</span></div>
+<div class="stat-item"><span class="stat-num" data-target="1">0</span><span class="stat-label">Panel Discussion</span></div>
+<div class="stat-item"><span class="stat-num" data-target="20+">0</span><span class="stat-label">Partner Institutions</span></div></div>
+
+<section id="about" class="section-padding section-alt">
+  <div class="container">
+    <div class="section-header">
+      <h2>About the Workshop</h2>
+    </div>
+    <div class="about-text">
+      <p>
+        <strong>Digital Finance for Supervision</strong> is a half-day workshop organized by the
+        MSCA DIGITAL network at the European Central Bank in Frankfurt am Main. The workshop
+        brings together leading researchers and practitioners to explore how cutting-edge
+        technologies&mdash;artificial intelligence, machine learning, and natural language
+        processing&mdash;can transform banking supervision and regulatory processes.
+      </p>
+      <p>
+        The event features two invited keynote presentations, a panel discussion on the role of
+        large language models in supervisory processes, and six contributed research talks selected
+        through an open call for papers. It offers a unique forum for SupTech innovation,
+        bridging the gap between academic research and supervisory practice at one of the world's
+        most important financial institutions.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<section id="cfp" class="section-padding">
+  <div class="container">
+    <div class="section-header">
+      <h2>Call for Papers</h2>
+      <p>We invite submissions on all aspects of digital finance applied to banking supervision.</p>
+    </div>
+    <div class="cfp-grid">
+      <div>
+        <h3 style="color:var(--primary);margin-bottom:14px;font-size:1.05rem;">Suggested Topics</h3>
+        <ul class="cfp-topics">
+          <li>AI/ML for bank supervision</li>
+<li>NLP for regulatory reporting and compliance</li>
+<li>Large language models in supervisory processes</li>
+<li>SupTech innovations and applications</li>
+<li>Explainable AI for financial regulation</li>
+<li>Digital finance and financial stability</li>
+        </ul>
+      </div>
+      <div class="cfp-info">
+        <h3>Submission Details</h3>
+        <p>Please submit an extended abstract (max 2 pages) to the organizing committee.</p>
+        <p>Submissions should be sent to the organizing committee via email.</p>
+        <p style="margin-top:16px;"><span class="cfp-deadline">Deadline: 2026-10-01</span></p>
+        <p style="margin-top:18px;">
+          <a href="mailto:joerg.osterrieder@utwente.nl" class="btn btn-primary">Submit Abstract</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="committee" class="section-padding section-alt">
+  <div class="container">
+    <div class="section-header">
+      <h2>Organizing Committee</h2>
+    </div>
+    <div class="committee-grid">
+      
+      <div class="member-card">
+        <div class="member-initials" style="background:hsl(10, 45%, 42%);">TM</div>
+        <div class="member-name">Theodoros Mastrokostopoulos</div>
+        <div class="member-role">ECB Lead Organizer</div>
+        <div class="member-aff">European Central Bank</div>
+      </div>
+      <div class="member-card">
+        <div class="member-initials" style="background:hsl(129, 45%, 42%);">FB</div>
+        <div class="member-name">Filippo Bartoli</div>
+        <div class="member-role">ECB Co-organizer</div>
+        <div class="member-aff">European Central Bank</div>
+      </div>
+      <div class="member-card">
+        <div class="member-initials" style="background:hsl(208, 45%, 42%);">JO</div>
+        <div class="member-name">Joerg Osterrieder</div>
+        <div class="member-role">DIGITAL Network Coordinator</div>
+        <div class="member-aff">University of Twente, Netherlands</div>
+      </div>
+      <div class="member-card">
+        <div class="member-initials" style="background:hsl(323, 45%, 42%);">DP</div>
+        <div class="member-name">Daniel Pele</div>
+        <div class="member-role">Committee Member</div>
+        <div class="member-aff">Bucharest University of Economic Studies, Romania</div>
+      </div>
+      <div class="member-card">
+        <div class="member-initials" style="background:hsl(233, 45%, 42%);">WH</div>
+        <div class="member-name">Wolfgang Haerdle</div>
+        <div class="member-role">Committee Member</div>
+        <div class="member-aff">Humboldt-Universitaet zu Berlin / WU Vienna</div>
+      </div>
+      <div class="member-card">
+        <div class="member-initials" style="background:hsl(305, 45%, 42%);">MI</div>
+        <div class="member-name">Maria Iannario</div>
+        <div class="member-role">Committee Member</div>
+        <div class="member-aff">University of Naples Federico II, Italy</div>
+      </div>
+      <div class="member-card">
+        <div class="member-initials" style="background:hsl(255, 45%, 42%);">CM</div>
+        <div class="member-name">Codruta Mare</div>
+        <div class="member-role">Committee Member</div>
+        <div class="member-aff">Babes-Bolyai University, Romania</div>
+      </div>
+      <div class="member-card">
+        <div class="member-initials" style="background:hsl(183, 45%, 42%);">CT</div>
+        <div class="member-name">Claudia Tarantola</div>
+        <div class="member-role">Committee Member</div>
+        <div class="member-aff">University of Milan, Italy</div>
+      </div>
+      <div class="member-card">
+        <div class="member-initials" style="background:hsl(81, 45%, 42%);">AT</div>
+        <div class="member-name">Alessandra Tanda</div>
+        <div class="member-role">Committee Member</div>
+        <div class="member-aff">University of Pavia, Italy</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="dates" class="section-padding">
+  <div class="container">
+    <div class="section-header">
+      <h2>Important Dates</h2>
+    </div>
+    <div class="dates-grid">
+      
+      <div class="date-card">
+        <div class="dc-icon">📢</div>
+        <div class="dc-date">October 1, 2026</div>
+        <div class="dc-label">Call for Papers Deadline</div>
+      </div>
+      <div class="date-card">
+        <div class="dc-icon">📧</div>
+        <div class="dc-date">October 15, 2026</div>
+        <div class="dc-label">Notification of Acceptance</div>
+      </div>
+      <div class="date-card">
+        <div class="dc-icon">📝</div>
+        <div class="dc-date">November 15, 2026</div>
+        <div class="dc-label">Registration Deadline</div>
+      </div>
+      <div class="date-card highlight">
+        <div class="dc-icon">🏛️</div>
+        <div class="dc-date">December 3, 2026</div>
+        <div class="dc-label">Workshop Day</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="program" class="section-padding section-alt">
+  <div class="container">
+    <div class="section-header">
+      <h2>Program</h2>
+      <p>December 3, 2026 &mdash; Half-day workshop (10:00 &ndash; 15:00 CET)</p>
+    </div>
+    <table class="program-table">
+      <thead><tr><th>Time</th><th>Event</th><th>Type</th></tr></thead>
+      <tbody>
+        
+        <tr>
+          <td style="white-space:nowrap;font-weight:600;">10:00</td>
+          <td>Registration & Welcome Coffee</td>
+          <td><span class="type-badge type-break">Break</span></td>
+        </tr>
+        <tr>
+          <td style="white-space:nowrap;font-weight:600;">10:15</td>
+          <td>Opening Remarks<div class="program-desc">Welcome by ECB and DIGITAL Network representatives</div></td>
+          <td><span class="type-badge type-ceremony">Ceremony</span></td>
+        </tr>
+        <tr>
+          <td style="white-space:nowrap;font-weight:600;">10:30</td>
+          <td>Keynote 1 &mdash; <em>Speaker TBA</em><div class="program-desc">Invited keynote on AI/ML in bank supervision</div></td>
+          <td><span class="type-badge type-keynote">Keynote</span></td>
+        </tr>
+        <tr>
+          <td style="white-space:nowrap;font-weight:600;">11:15</td>
+          <td>Research Session 1: AI/ML for Bank Supervision<div class="program-desc">3 contributed talks, 15 minutes each</div></td>
+          <td><span class="type-badge type-session">Session</span></td>
+        </tr>
+        <tr>
+          <td style="white-space:nowrap;font-weight:600;">12:00</td>
+          <td>Lunch Break & Networking</td>
+          <td><span class="type-badge type-break">Break</span></td>
+        </tr>
+        <tr>
+          <td style="white-space:nowrap;font-weight:600;">13:00</td>
+          <td>Keynote 2 / Panel: LLMs in Supervision &mdash; <em>Speaker TBA</em><div class="program-desc">Panel discussion on the role of large language models in supervisory processes</div></td>
+          <td><span class="type-badge type-keynote">Keynote</span></td>
+        </tr>
+        <tr>
+          <td style="white-space:nowrap;font-weight:600;">13:45</td>
+          <td>Research Session 2: NLP & SupTech Applications<div class="program-desc">3 contributed talks, 15 minutes each</div></td>
+          <td><span class="type-badge type-session">Session</span></td>
+        </tr>
+        <tr>
+          <td style="white-space:nowrap;font-weight:600;">14:30</td>
+          <td>Panel Discussion: The Future of Digital Supervision<div class="program-desc">Moderated discussion with ECB experts and network researchers</div></td>
+          <td><span class="type-badge type-panel">Panel</span></td>
+        </tr>
+        <tr>
+          <td style="white-space:nowrap;font-weight:600;">14:50</td>
+          <td>Closing Remarks</td>
+          <td><span class="type-badge type-ceremony">Ceremony</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<section id="topics" class="section-padding">
+  <div class="container">
+    <div class="section-header">
+      <h2>Research Topics</h2>
+      <p>Key research areas for the workshop</p>
+    </div>
+    <div class="topics-grid">
+      
+      <div class="topic-card">
+        <div class="topic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="48" height="48"><path d="M12 2a5 5 0 0 1 4.77 3.48A4 4 0 0 1 20 9.5a4 4 0 0 1-1.5 3.12A4.5 4.5 0 0 1 17 17.5a4.5 4.5 0 0 1-2.6 1.37A3.5 3.5 0 0 1 12 22a3.5 3.5 0 0 1-2.4-3.13A4.5 4.5 0 0 1 7 17.5a4.5 4.5 0 0 1-1.5-4.88A4 4 0 0 1 4 9.5a4 4 0 0 1 3.23-3.92A5 5 0 0 1 12 2z"/><path d="M12 2v20"/><path d="M8 6h8"/><path d="M7 10h10"/><path d="M8 14h8"/><path d="M9 18h6"/></svg></div>
+        <h3>AI/ML for Bank Supervision</h3>
+        <p>Application of artificial intelligence and machine learning techniques to enhance banking supervision and regulatory oversight.</p>
+        <ul class="topic-bullets">
+          <li>Predictive models for identifying risks in supervised entities</li>
+<li>Anomaly detection in financial reporting data</li>
+<li>Automated risk scoring and early warning systems</li>
+<li>Machine learning for stress testing and scenario analysis</li>
+<li>AI-driven assessment of bank business models</li>
+        </ul>
+      </div>
+      <div class="topic-card">
+        <div class="topic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="48" height="48"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/><line x1="8" y1="9" x2="10" y2="9"/></svg></div>
+        <h3>NLP for Regulatory Reporting</h3>
+        <p>Natural language processing applied to regulatory documents, compliance monitoring, and supervisory communication.</p>
+        <ul class="topic-bullets">
+          <li>Automated analysis of regulatory filings and disclosures</li>
+<li>Text mining of supervisory reports and assessments</li>
+<li>Sentiment analysis of central bank communications</li>
+<li>Information extraction from annual reports and prospectuses</li>
+<li>Compliance monitoring through textual analysis</li>
+        </ul>
+      </div>
+      <div class="topic-card">
+        <div class="topic-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="48" height="48"><path d="M12 2a5 5 0 0 1 4.77 3.48A4 4 0 0 1 20 9.5a4 4 0 0 1-1.5 3.12A4.5 4.5 0 0 1 17 17.5a4.5 4.5 0 0 1-2.6 1.37A3.5 3.5 0 0 1 12 22a3.5 3.5 0 0 1-2.4-3.13A4.5 4.5 0 0 1 7 17.5a4.5 4.5 0 0 1-1.5-4.88A4 4 0 0 1 4 9.5a4 4 0 0 1 3.23-3.92A5 5 0 0 1 12 2z"/><path d="M12 2v20"/><path d="M8 6h8"/><path d="M7 10h10"/><path d="M8 14h8"/><path d="M9 18h6"/></svg></div>
+        <h3>LLMs in Supervision</h3>
+        <p>Large language models and generative AI for supervisory processes and regulatory technology.</p>
+        <ul class="topic-bullets">
+          <li>LLM-assisted review of regulatory documentation</li>
+<li>Generative AI for drafting supervisory assessments</li>
+<li>Question-answering systems for regulatory frameworks</li>
+<li>Summarization of complex financial documents</li>
+<li>Ethical considerations and hallucination risks in supervisory AI</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="venue" class="section-padding section-alt">
+  <div class="container">
+    <div class="section-header">
+      <h2>Venue</h2>
+    </div>
+    <div class="venue-grid">
+      <div class="venue-info">
+        <div class="venue-address">
+          <strong>European Central Bank</strong><br>
+          Sonnemannstrasse 20, 60314 Frankfurt am Main<br>
+          Germany
+        </div>
+        <p>
+          The workshop takes place at the European Central Bank's main building in Frankfurt am Main.
+          Opened in 2014, the ECB's iconic twin-tower headquarters on the banks of the River Main
+          provides a fitting venue for cutting-edge discussions on supervisory technology and
+          digital finance innovation.
+        </p>
+        <div class="venue-practical">
+          <h4>Getting There</h4>
+          <ul>
+            <li>Frankfurt Airport (FRA) &mdash; 15 min by S-Bahn or taxi</li>
+            <li>Frankfurt Hauptbahnhof &mdash; 10 min by tram (Line 11)</li>
+            <li>Nearest stop: Ostbahnhof / ECB (tram &amp; bus)</li>
+          </ul>
+        </div>
+        <div class="venue-practical" style="margin-top:14px;">
+          <h4>Accommodation</h4>
+          <ul>
+            <li>Hotels in the Ostend district (walking distance)</li>
+            <li>City center hotels (10 min by public transport)</li>
+            <li>Frankfurt Hauptbahnhof area (well connected)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="venue-map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2558.8!2d8.7017!3d50.1096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bd0ea4f1852dc5%3A0xd3d4a5f8e3e5cd56!2sEuropean%20Central%20Bank!5e0!3m2!1sen!2sde!4v1700000000000!5m2!1sen!2sde"
+          allowfullscreen loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="European Central Bank location">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="partners" class="section-padding">
+  <div class="container">
+    <div class="section-header">
+      <h2>Partner Institutions</h2>
+      <p>The MSCA DIGITAL network brings together leading universities, central banks, and industry partners.</p>
+    </div>
+    <div class="partners-section-label">Associated Partners</div>
+    <div class="partners-grid">
+      
+        <div class="partner-card host-card">
+          <div class="partner-logo-placeholder" style="background:hsl(89, 45%, 42%);">E</div>
+          <div class="partner-name">European Central Bank</div>
+          <div class="partner-country">Germany</div>
+          <div><span class="host-badge">Host Institution</span></div>
+        </div>
+        <div class="partner-card">
+          <div class="partner-logo-placeholder" style="background:hsl(262, 45%, 42%);">I</div>
+          <div class="partner-name">ING Bank</div>
+          <div class="partner-country">Netherlands</div>
+          
+        </div>
+        <div class="partner-card">
+          <div class="partner-logo-placeholder" style="background:hsl(113, 45%, 42%);">P</div>
+          <div class="partner-name">Prometeia</div>
+          <div class="partner-country">Italy</div>
+          
+        </div>
+        <div class="partner-card">
+          <div class="partner-logo-placeholder" style="background:hsl(60, 45%, 42%);">S</div>
+          <div class="partner-name">SAS Institute</div>
+          <div class="partner-country">International</div>
+          
+        </div>
+        <div class="partner-card">
+          <div class="partner-logo-placeholder" style="background:hsl(321, 45%, 42%);">D</div>
+          <div class="partner-name">d-fine</div>
+          <div class="partner-country">Germany</div>
+          
+        </div>
+        <div class="partner-card">
+          <div class="partner-logo-placeholder" style="background:hsl(253, 45%, 42%);">E</div>
+          <div class="partner-name">Erste Group Bank</div>
+          <div class="partner-country">Austria</div>
+          
+        </div>
+        <div class="partner-card">
+          <div class="partner-logo-placeholder" style="background:hsl(357, 45%, 42%);">K</div>
+          <div class="partner-name">KPMG</div>
+          <div class="partner-country">International</div>
+          
+        </div>
+        <div class="partner-card">
+          <div class="partner-logo-placeholder" style="background:hsl(5, 45%, 42%);">C</div>
+          <div class="partner-name">CaixaBank</div>
+          <div class="partner-country">Spain</div>
+          
+        </div>
+        <div class="partner-card">
+          <div class="partner-logo-placeholder" style="background:hsl(102, 45%, 42%);">B</div>
+          <div class="partner-name">National Bank of Romania</div>
+          <div class="partner-country">Romania</div>
+          
+        </div>
+        <div class="partner-card">
+          <div class="partner-logo-placeholder" style="background:hsl(98, 45%, 42%);">B</div>
+          <div class="partner-name">BitPanda</div>
+          <div class="partner-country">Austria</div>
+          
+        </div>
+        <div class="partner-card">
+          <div class="partner-logo-placeholder" style="background:hsl(133, 45%, 42%);">B</div>
+          <div class="partner-name">Banca d'Italia</div>
+          <div class="partner-country">Italy</div>
+          
+        </div>
+        <div class="partner-card">
+          <div class="partner-logo-placeholder" style="background:hsl(163, 45%, 42%);">D</div>
+          <div class="partner-name">Finanstilsynet (DFSA)</div>
+          <div class="partner-country">Denmark</div>
+          
+        </div>
+        <div class="partner-card">
+          <div class="partner-logo-placeholder" style="background:hsl(172, 45%, 42%);">B</div>
+          <div class="partner-name">Deutsche Bundesbank</div>
+          <div class="partner-country">Germany</div>
+          
+        </div>
+    </div>
+    <div class="partners-section-label">Beneficiary Partners</div>
+    <div class="partners-grid">
+      
+        <div class="partner-card">
+          <div class="partner-logo-placeholder" style="background:hsl(7, 45%, 42%);">U</div>
+          <div class="partner-name">University of Twente</div>
+          <div class="partner-country">Netherlands</div>
+          
+        </div>
+        <div class="partner-card">
+          <div class="partner-logo-placeholder" style="background:hsl(93, 45%, 42%);">U</div>
+          <div class="partner-name">University of Pavia</div>
+          <div class="partner-country">Italy</div>
+          
+        </div>
+        <div class="partner-card">
+          <div class="partner-logo-placeholder" style="background:hsl(73, 45%, 42%);">A</div>
+          <div class="partner-name">Bucharest University of Economic Studies</div>
+          <div class="partner-country">Romania</div>
+          
+        </div>
+        <div class="partner-card">
+          <div class="partner-logo-placeholder" style="background:hsl(34, 45%, 42%);">HB</div>
+          <div class="partner-name">Humboldt-Universitaet zu Berlin</div>
+          <div class="partner-country">Germany</div>
+          
+        </div>
+        <div class="partner-card">
+          <div class="partner-logo-placeholder" style="background:hsl(149, 45%, 42%);">U</div>
+          <div class="partner-name">University of Naples Federico II</div>
+          <div class="partner-country">Italy</div>
+          
+        </div>
+        <div class="partner-card">
+          <div class="partner-logo-placeholder" style="background:hsl(251, 45%, 42%);">B</div>
+          <div class="partner-name">Babes-Bolyai University</div>
+          <div class="partner-country">Romania</div>
+          
+        </div>
+        <div class="partner-card">
+          <div class="partner-logo-placeholder" style="background:hsl(63, 45%, 42%);">U</div>
+          <div class="partner-name">University of Milan</div>
+          <div class="partner-country">Italy</div>
+          
+        </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<footer class="footer">
+  <div class="main-content" style="margin-left:0;">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Funding Acknowledgment</h4>
+          <p>This workshop is funded by the European Union's Horizon Europe research and innovation programme under the Marie Sklodowska-Curie Grant Agreement No. 101119635 (DIGITAL - Digital Finance - Reaching New Frontiers).</p>
+          <p style="margin-top:8px;">Grant Agreement No. 101119635</p>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p><a href="mailto:joerg.osterrieder@utwente.nl">joerg.osterrieder@utwente.nl</a></p>
+          <p style="margin-top:8px;"><a href="https://www.digital-finance-msca.com" target="_blank" rel="noopener">DIGITAL Network Website</a></p>
+        </div>
+        <div>
+          <h4>Links</h4>
+          <p><a href="https://www.ecb.europa.eu" target="_blank" rel="noopener">European Central Bank</a></p>
+          <p><a href="https://marie-sklodowska-curie-actions.ec.europa.eu" target="_blank" rel="noopener">MSCA Programme</a></p>
+          <p><a href="https://cordis.europa.eu/project/id/101119635" target="_blank" rel="noopener">CORDIS Project Page</a></p>
+        </div>
+      </div>
+      <div class="footer-disclaimer">
+        Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Research Executive Agency. Neither the European Union nor the granting authority can be held responsible for them.
+      </div>
+      <div class="footer-bottom">
+        &copy; MSCA DIGITAL Network 2024-2027. All rights reserved.
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+
+(function(){
+    // Countdown to December 3 2026
+    var target = new Date('2026-12-03T10:00:00+01:00').getTime();
+    function updateCountdown(){
+        var now = Date.now();
+        var diff = target - now;
+        if(diff<=0){
+            document.querySelectorAll('.countdown-unit .num').forEach(function(e){e.textContent='0';});
+            return;
+        }
+        var d = Math.floor(diff/86400000);
+        var h = Math.floor((diff%86400000)/3600000);
+        var m = Math.floor((diff%3600000)/60000);
+        var s = Math.floor((diff%60000)/1000);
+        var el = document.getElementById('cd-days');   if(el) el.textContent=d;
+        el = document.getElementById('cd-hours');  if(el) el.textContent=h;
+        el = document.getElementById('cd-mins');   if(el) el.textContent=m;
+        el = document.getElementById('cd-secs');   if(el) el.textContent=s;
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // Animated counters
+    var observed = false;
+    var counters = document.querySelectorAll('.stat-num');
+    function animateCounters(){
+        if(observed) return;
+        observed = true;
+        counters.forEach(function(el){
+            var text = el.getAttribute('data-target');
+            var hasPlus = text.indexOf('+') !== -1;
+            var num = parseInt(text.replace('+',''), 10);
+            var duration = 1200;
+            var start = performance.now();
+            function step(ts){
+                var progress = Math.min((ts - start) / duration, 1);
+                var ease = 1 - Math.pow(1 - progress, 3);
+                var current = Math.floor(ease * num);
+                el.textContent = current + (hasPlus ? '+' : '');
+                if(progress < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+        });
+    }
+    if('IntersectionObserver' in window){
+        var io = new IntersectionObserver(function(entries){
+            entries.forEach(function(e){
+                if(e.isIntersecting) animateCounters();
+            });
+        }, {threshold: 0.3});
+        var bar = document.querySelector('.stats-bar');
+        if(bar) io.observe(bar);
+    } else {
+        animateCounters();
+    }
+
+    // Active sidebar link on scroll
+    var sections = document.querySelectorAll('section[id]');
+    var navLinks = document.querySelectorAll('.sidebar-nav a');
+    function onScroll(){
+        var scrollY = window.scrollY + 120;
+        var current = '';
+        sections.forEach(function(sec){
+            if(sec.offsetTop <= scrollY){
+                current = sec.getAttribute('id');
+            }
+        });
+        navLinks.forEach(function(a){
+            a.classList.remove('active');
+            if(a.getAttribute('href') === '#' + current) a.classList.add('active');
+        });
+    }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
+
+    // Smooth scroll for sidebar links (fallback for browsers without CSS smooth)
+    navLinks.forEach(function(a){
+        a.addEventListener('click', function(ev){
+            var id = this.getAttribute('href');
+            if(id && id.charAt(0)==='#'){
+                var target = document.querySelector(id);
+                if(target){
+                    ev.preventDefault();
+                    target.scrollIntoView({behavior:'smooth'});
+                }
+            }
+        });
+    });
+})();
+
+</script>
+</body>
+</html>

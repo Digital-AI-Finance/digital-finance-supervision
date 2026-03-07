@@ -1,0 +1,43 @@
+{
+  "topics": [
+    {
+      "id": "aiml-supervision",
+      "title": "AI/ML for Bank Supervision",
+      "icon": "brain",
+      "description": "Application of artificial intelligence and machine learning techniques to enhance banking supervision and regulatory oversight.",
+      "bullets": [
+        "Predictive models for identifying risks in supervised entities",
+        "Anomaly detection in financial reporting data",
+        "Automated risk scoring and early warning systems",
+        "Machine learning for stress testing and scenario analysis",
+        "AI-driven assessment of bank business models"
+      ]
+    },
+    {
+      "id": "nlp-regulatory",
+      "title": "NLP for Regulatory Reporting",
+      "icon": "file-text",
+      "description": "Natural language processing applied to regulatory documents, compliance monitoring, and supervisory communication.",
+      "bullets": [
+        "Automated analysis of regulatory filings and disclosures",
+        "Text mining of supervisory reports and assessments",
+        "Sentiment analysis of central bank communications",
+        "Information extraction from annual reports and prospectuses",
+        "Compliance monitoring through textual analysis"
+      ]
+    },
+    {
+      "id": "llm-supervision",
+      "title": "LLMs in Supervision",
+      "icon": "message-square",
+      "description": "Large language models and generative AI for supervisory processes and regulatory technology.",
+      "bullets": [
+        "LLM-assisted review of regulatory documentation",
+        "Generative AI for drafting supervisory assessments",
+        "Question-answering systems for regulatory frameworks",
+        "Summarization of complex financial documents",
+        "Ethical considerations and hallucination risks in supervisory AI"
+      ]
+    }
+  ]
+}

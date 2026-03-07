@@ -1,0 +1,48 @@
+{
+  "days": [
+    {
+      "date": "2026-12-03",
+      "title": "Digital Finance for Supervision",
+      "type": "in-person",
+      "items": [
+        {"time": "10:00", "type": "break", "title": "Registration & Welcome Coffee"},
+        {"time": "10:15", "type": "ceremony", "title": "Opening Remarks", "description": "Welcome by ECB and DIGITAL Network representatives"},
+        {"time": "10:30", "type": "keynote", "title": "Keynote 1", "speaker": "TBA", "description": "Invited keynote on AI/ML in bank supervision"},
+        {"time": "11:15", "type": "session", "title": "Research Session 1: AI/ML for Bank Supervision", "description": "3 contributed talks, 15 minutes each", "talks": [
+          {"title": "TBA", "speaker": "TBA", "time": "11:15"},
+          {"title": "TBA", "speaker": "TBA", "time": "11:30"},
+          {"title": "TBA", "speaker": "TBA", "time": "11:45"}
+        ]},
+        {"time": "12:00", "type": "break", "title": "Lunch Break & Networking"},
+        {"time": "13:00", "type": "keynote", "title": "Keynote 2 / Panel: LLMs in Supervision", "speaker": "TBA", "description": "Panel discussion on the role of large language models in supervisory processes"},
+        {"time": "13:45", "type": "session", "title": "Research Session 2: NLP & SupTech Applications", "description": "3 contributed talks, 15 minutes each", "talks": [
+          {"title": "TBA", "speaker": "TBA", "time": "13:45"},
+          {"title": "TBA", "speaker": "TBA", "time": "14:00"},
+          {"title": "TBA", "speaker": "TBA", "time": "14:15"}
+        ]},
+        {"time": "14:30", "type": "panel", "title": "Panel Discussion: The Future of Digital Supervision", "description": "Moderated discussion with ECB experts and network researchers"},
+        {"time": "14:50", "type": "ceremony", "title": "Closing Remarks"}
+      ]
+    }
+  ],
+  "session_format": {
+    "duration_minutes": 45,
+    "talks_per_session": 3,
+    "talk_duration_minutes": 15,
+    "has_discussion": false
+  },
+  "call_for_papers": {
+    "active": true,
+    "deadline": "2026-10-01",
+    "notification": "2026-10-15",
+    "topics": [
+      "AI/ML for bank supervision",
+      "NLP for regulatory reporting and compliance",
+      "Large language models in supervisory processes",
+      "SupTech innovations and applications",
+      "Explainable AI for financial regulation",
+      "Digital finance and financial stability"
+    ],
+    "submission_instructions": "Please submit an extended abstract (max 2 pages) to the organizing committee."
+  }
+}

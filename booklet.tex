@@ -1,0 +1,594 @@
+% ============================================================================
+% Digital Finance for Supervision - Workshop Booklet
+% MSCA DIGITAL Network Workshop at the European Central Bank
+% December 3, 2026
+% ============================================================================
+\documentclass[a4paper,11pt]{article}
+
+% --- Packages ---
+\usepackage[margin=15mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[table,dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{tikz}
+\usetikzlibrary{calc,positioning,shapes.geometric,shadows,fit}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\usepackage{qrcode}
+\usepackage{fontawesome5}
+\usepackage{parskip}
+\usepackage{microtype}
+\usepackage{ragged2e}
+\usepackage{setspace}
+
+% --- Colors ---
+\definecolor{ecbblue}{HTML}{003399}
+\definecolor{ecbgold}{HTML}{FFD700}
+\definecolor{digitalblue}{HTML}{2E5090}
+\definecolor{darkbg}{HTML}{1a1a2e}
+\definecolor{lightbg}{HTML}{F0F0F0}
+\definecolor{lightblue}{HTML}{E8EEF7}
+\definecolor{lightgold}{HTML}{FFF8DC}
+\definecolor{medgray}{HTML}{666666}
+\definecolor{lightgray2}{HTML}{E0E0E0}
+
+% --- Macros ---
+% Section title with gold underline
+\newcommand{\goldsection}[1]{%
+  \vspace{6pt}%
+  {\Large\bfseries\color{ecbblue}#1}\\[-4pt]
+  \textcolor{ecbgold}{\rule{0.35\textwidth}{2.5pt}}%
+  \vspace{6pt}%
+}
+
+% Stat box
+\newcommand{\statbox}[2]{%
+  \begin{tikzpicture}
+    \node[draw=ecbblue, line width=1pt, rounded corners=6pt,
+          minimum width=3.6cm, minimum height=2.2cm,
+          fill=lightblue, inner sep=6pt, align=center] {%
+      {\LARGE\bfseries\color{ecbblue}#1}\\[4pt]
+      {\small\color{medgray}#2}%
+    };
+  \end{tikzpicture}%
+}
+
+% Topic card
+\newcommand{\topiccard}[3]{%
+  \begin{tikzpicture}
+    \node[draw=ecbblue!30, line width=0.8pt, rounded corners=8pt,
+          fill=white, minimum width=\linewidth-8pt, inner sep=10pt,
+          align=left, text width=\linewidth-30pt,
+          drop shadow={shadow xshift=1pt, shadow yshift=-1pt, opacity=0.15}] {%
+      {\large\bfseries\color{ecbblue}#1}\\[2pt]
+      \textcolor{ecbgold}{\rule{3cm}{1.5pt}}\\[6pt]
+      {\small\color{darkbg}#2}\\[4pt]
+      {\small\color{medgray}#3}%
+    };
+  \end{tikzpicture}%
+}
+
+% Committee entry
+\newcommand{\committeemember}[3]{%
+  {\bfseries\color{ecbblue}#1}\\
+  {\small\color{medgray}#2}\\
+  {\small\itshape #3}\par\vspace{4pt}%
+}
+
+% --- Header/Footer for inner pages ---
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[L]{\small\color{ecbblue}\bfseries Digital Finance for Supervision}
+\fancyhead[R]{\small\color{medgray}December 3, 2026}
+\fancyfoot[C]{\small\color{medgray}\thepage}
+\fancyfoot[R]{\small\color{ecbblue}MSCA DIGITAL Network}
+
+% --- Document ---
+\begin{document}
+
+% ============================================================================
+% PAGE 1: COVER
+% ============================================================================
+\thispagestyle{empty}
+\pagecolor{ecbblue}
+\begin{tikzpicture}[remember picture, overlay]
+  % Background pattern - subtle geometric elements
+  \foreach \i in {1,...,12}{
+    \draw[white, opacity=0.03, line width=0.5pt]
+      ($(current page.south west) + (rand*21, rand*29.7)$) circle (1.5+rand*2);
+  }
+  % Diagonal accent lines
+  \draw[ecbgold, line width=2pt, opacity=0.3]
+    ($(current page.north west) + (0,-8)$) -- ++(6,3);
+  \draw[ecbgold, line width=1pt, opacity=0.2]
+    ($(current page.north west) + (0,-9)$) -- ++(8,4);
+  % Gold accent bar at top
+  \fill[ecbgold] ($(current page.north west)$) rectangle ($(current page.north east) + (0,-3pt)$);
+  % Bottom gold bar
+  \fill[ecbgold, opacity=0.6]
+    ($(current page.south west) + (0,2.5cm)$) rectangle ($(current page.south east) + (0,2.53cm)$);
+  % ECB venue text at bottom
+  \node[anchor=south, text=white, opacity=0.7] at ($(current page.south) + (0,1cm)$)
+    {\small European Central Bank $\cdot$ Sonnemannstrasse 20 $\cdot$ 60314 Frankfurt am Main};
+  % MSCA badge area
+  \node[anchor=north west, text=white, opacity=0.8] at ($(current page.north west) + (1.5,-1.2)$)
+    {\footnotesize\bfseries MSCA DIGITAL Network $\mid$ Horizon Europe};
+\end{tikzpicture}
+
+\vspace*{3cm}
+\begin{center}
+  {\color{ecbgold}\rule{8cm}{1.5pt}}\\[12pt]
+  {\fontsize{14}{16}\selectfont\color{ecbgold}\bfseries
+    MSCA DIGITAL Network Workshop}\\[6pt]
+  {\fontsize{12}{14}\selectfont\color{ecbgold}
+    at the European Central Bank}\\[20pt]
+  {\fontsize{36}{40}\selectfont\bfseries\color{white}
+    Digital Finance\\[6pt] for Supervision}\\[16pt]
+  {\color{ecbgold}\rule{8cm}{1.5pt}}\\[24pt]
+  {\Large\color{white}
+    Bringing together ECB supervision experts\\[4pt]
+    and DIGITAL network researchers to explore\\[4pt]
+    AI, NLP, and LLMs in financial supervision}\\[30pt]
+  \begin{tikzpicture}
+    \node[draw=ecbgold, rounded corners=8pt, line width=1.2pt,
+          inner sep=12pt, text=white, fill=ecbblue!80!black] {%
+      \begin{tabular}{ccc}
+        {\large\bfseries Thursday, December 3, 2026} &
+        \quad{\color{ecbgold}$\bm{\cdot}$}\quad &
+        {\large 10:00\,--\,15:00 CET}
+      \end{tabular}
+    };
+  \end{tikzpicture}\\[20pt]
+  {\color{white}\large Free Registration $\cdot$ 30--50 Participants}\\[8pt]
+  {\color{ecbgold}\small Grant Agreement No.\ 101119635}
+\end{center}
+\vfill
+
+\clearpage
+\nopagecolor
+
+% ============================================================================
+% PAGE 2: FOREWORD
+% ============================================================================
+\goldsection{Foreword from the Organizers}
+
+\vspace{4pt}
+{\itshape\color{medgray}\large A letter from the co-chairs}
+\vspace{10pt}
+
+\begin{spacing}{1.15}
+Dear colleagues and friends,
+
+It is our great pleasure to welcome you to the \textbf{Digital Finance for Supervision} workshop, hosted at the \textbf{European Central Bank} in Frankfurt am Main on December 3, 2026.
+
+This workshop represents a unique convergence of academic research and supervisory practice. As financial supervision enters a transformative era driven by artificial intelligence, natural language processing, and large language models, there is a pressing need to bridge the gap between cutting-edge research and real-world supervisory applications.
+
+The \textbf{DIGITAL network} --- funded by the European Union's Horizon Europe programme under the Marie Sk\l{}odowska-Curie Actions --- brings together 22 partner institutions from across Europe, including universities, central banks, financial institutions, and technology companies. Our shared mission is to advance the frontiers of digital finance research while training the next generation of researchers who can navigate both the technical and regulatory dimensions of financial innovation.
+
+Today's workshop focuses specifically on the intersection of digital technologies and banking supervision. We have assembled a programme that features keynote addresses from leading experts, research presentations on AI/ML for bank supervision, NLP applications for regulatory reporting, and the emerging use of large language models in supervisory processes.
+
+We are particularly grateful to the ECB for hosting this event and for the active engagement of ECB staff in both the organization and the intellectual programme. The collaboration between the ECB and the DIGITAL network exemplifies the kind of partnership between supervisory authorities and academic institutions that is essential for responsible innovation in financial supervision.
+
+We encourage you to engage actively in the discussions, connect with fellow researchers and practitioners, and explore opportunities for collaboration. The challenges of digital supervision are too significant for any single institution to address alone --- together, we can shape a supervisory framework that is both technologically advanced and robustly grounded.
+
+Thank you for joining us. We look forward to a stimulating and productive day.
+\end{spacing}
+
+\vspace{14pt}
+\begin{minipage}[t]{0.48\textwidth}
+  \textbf{\color{ecbblue}Theodoros Mastrokostopoulos}\\
+  {\small ECB Lead Organizer\\European Central Bank}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+  \raggedleft
+  \textbf{\color{ecbblue}Joerg Osterrieder}\\
+  {\small DIGITAL Network Coordinator\\University of Twente}
+\end{minipage}
+
+\vfill
+{\centering\color{ecbgold}\rule{0.5\textwidth}{1pt}\par}
+
+\clearpage
+
+% ============================================================================
+% PAGE 3: ABOUT THE WORKSHOP
+% ============================================================================
+\goldsection{About the Workshop}
+
+\vspace{2pt}
+The \textbf{Digital Finance for Supervision} workshop brings together researchers from the MSCA DIGITAL network and supervision practitioners from the European Central Bank to explore how artificial intelligence, natural language processing, and large language models are reshaping financial supervision across Europe.
+
+This one-day event features keynote presentations, research sessions, and panel discussions designed to foster dialogue between academia and supervisory practice. Participants will explore state-of-the-art research on supervisory technology (SupTech) and its implications for the future of banking oversight.
+
+\vspace{12pt}
+
+% Stat boxes
+\begin{center}
+\statbox{30+}{Participants}
+\hspace{8pt}
+\statbox{6}{Research Talks}
+\hspace{8pt}
+\statbox{2}{Keynotes}
+\hspace{8pt}
+\statbox{20+}{Partner Institutions}
+\end{center}
+
+\vspace{14pt}
+\goldsection{Key Information}
+\vspace{2pt}
+
+\begin{multicols}{2}
+\begin{itemize}[leftmargin=14pt, itemsep=3pt, label={\color{ecbgold}\textbullet}]
+  \item \textbf{Date:} Thursday, December 3, 2026
+  \item \textbf{Time:} 10:00\,--\,15:00 CET
+  \item \textbf{Venue:} European Central Bank\\
+        Sonnemannstrasse 20\\
+        60314 Frankfurt am Main, Germany
+  \item \textbf{Registration:} Free of charge
+  \item \textbf{Participants:} 30--50 expected
+  \item \textbf{Format:} In-person
+  \item \textbf{Language:} English
+  \item \textbf{Lunch:} Provided for all participants
+\end{itemize}
+\end{multicols}
+
+\vspace{6pt}
+\goldsection{Register Now}
+\vspace{4pt}
+
+\begin{center}
+\begin{tikzpicture}
+  \node[draw=ecbblue, rounded corners=10pt, line width=1pt,
+        fill=lightblue, inner sep=14pt] {%
+    \begin{minipage}{0.7\textwidth}
+    \centering
+    {\large\bfseries\color{ecbblue} Scan to visit the workshop website}\\[10pt]
+    \qrcode[height=2.8cm]{https://digital-finance-msca.eu/events/ecb-workshop-2026}\\[10pt]
+    {\small\color{medgray}\url{https://digital-finance-msca.eu}}
+    \end{minipage}
+  };
+\end{tikzpicture}
+\end{center}
+
+\vfill
+{\centering\small\color{medgray}
+Part of the DIGITAL -- Digital Finance -- Reaching New Frontiers project (GA 101119635)\par}
+
+\clearpage
+
+% ============================================================================
+% PAGE 4: PROGRAM AT A GLANCE
+% ============================================================================
+\goldsection{Program at a Glance}
+
+\vspace{4pt}
+{\itshape\color{medgray} Thursday, December 3, 2026 --- European Central Bank, Frankfurt}
+\vspace{10pt}
+
+\renewcommand{\arraystretch}{1.55}
+\begin{tabularx}{\textwidth}{>{\bfseries\color{ecbblue}}l X >{\color{medgray}\small}r}
+\toprule
+\rowcolor{lightgold}
+\multicolumn{3}{l}{\bfseries\color{ecbblue}\large Morning Session}\\
+\midrule
+\rowcolor{lightgray2}
+10:00\,--\,10:15 & \textbf{Registration \& Welcome Coffee} & \textit{Lobby}\\
+\rowcolor{white}
+10:15\,--\,10:30 & \textbf{Opening Remarks} --- Welcome address by ECB hosts and DIGITAL network coordinator & \textit{Main Hall}\\
+\rowcolor{lightgold!60}
+10:30\,--\,11:15 & \textbf{Keynote Address 1} --- Speaker to be announced. Topic: AI and the future of banking supervision & \textit{Main Hall}\\
+\rowcolor{lightblue!50}
+11:15\,--\,11:35 & \textbf{Research Talk 1} --- AI/ML for Bank Supervision & \textit{Main Hall}\\
+\rowcolor{lightblue!30}
+11:35\,--\,11:55 & \textbf{Research Talk 2} --- AI/ML for Bank Supervision & \textit{Main Hall}\\
+\rowcolor{lightblue!50}
+11:55\,--\,12:00 & \textbf{Research Talk 3} --- AI/ML for Bank Supervision & \textit{Main Hall}\\
+\midrule
+\rowcolor{lightgray2}
+12:00\,--\,13:00 & \textbf{Lunch Break \& Networking} --- Buffet lunch with opportunity for informal discussions and networking & \textit{Dining Area}\\
+\midrule
+\rowcolor{lightgold}
+\multicolumn{3}{l}{\bfseries\color{ecbblue}\large Afternoon Session}\\
+\midrule
+\rowcolor{lightgold!60}
+13:00\,--\,13:45 & \textbf{Keynote 2 / Panel: LLMs in Supervision} --- Expert perspectives on large language models for supervisory processes. Speaker(s) TBA & \textit{Main Hall}\\
+\rowcolor{lightblue!50}
+13:45\,--\,14:05 & \textbf{Research Talk 4} --- NLP \& SupTech Applications & \textit{Main Hall}\\
+\rowcolor{lightblue!30}
+14:05\,--\,14:25 & \textbf{Research Talk 5} --- NLP \& SupTech Applications & \textit{Main Hall}\\
+\rowcolor{lightblue!50}
+14:25\,--\,14:30 & \textbf{Research Talk 6} --- NLP \& SupTech Applications & \textit{Main Hall}\\
+\rowcolor{lightgold!40}
+14:30\,--\,14:50 & \textbf{Panel Discussion:} \textit{The Future of Digital Supervision} --- Moderated discussion with keynote speakers and senior ECB staff & \textit{Main Hall}\\
+\rowcolor{white}
+14:50\,--\,15:00 & \textbf{Closing Remarks} --- Summary and outlook by workshop co-chairs & \textit{Main Hall}\\
+\bottomrule
+\end{tabularx}
+\renewcommand{\arraystretch}{1.0}
+
+\vfill
+\begin{center}
+\begin{tikzpicture}
+  \node[draw=ecbgold, rounded corners=6pt, line width=0.8pt,
+        fill=lightgold!50, inner sep=8pt] {%
+    {\small\color{ecbblue}\bfseries Note:} {\small\color{medgray} Specific speaker names and talk titles will be announced closer to the event date.}
+  };
+\end{tikzpicture}
+\end{center}
+
+\clearpage
+
+% ============================================================================
+% PAGE 5: ORGANIZING COMMITTEE
+% ============================================================================
+\goldsection{Organizing Committee}
+
+\vspace{6pt}
+
+\begin{tikzpicture}
+  \node[draw=ecbblue, rounded corners=8pt, line width=1pt,
+        fill=lightblue, inner sep=12pt, text width=\textwidth-30pt] {%
+    {\large\bfseries\color{ecbblue} Workshop Co-Chairs}\\[6pt]
+    \begin{minipage}[t]{0.47\textwidth}
+      {\bfseries\color{darkbg} Theodoros Mastrokostopoulos}\\
+      {\small ECB Lead Organizer}\\
+      {\small\itshape European Central Bank}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.47\textwidth}
+      {\bfseries\color{darkbg} Joerg Osterrieder}\\
+      {\small DIGITAL Network Coordinator}\\
+      {\small\itshape University of Twente}
+    \end{minipage}
+  };
+\end{tikzpicture}
+
+\vspace{14pt}
+{\large\bfseries\color{ecbblue} Committee Members}\\[2pt]
+\textcolor{ecbgold}{\rule{4cm}{1.5pt}}
+\vspace{8pt}
+
+\begin{multicols}{2}
+\committeemember{Filippo Bartoli}{ECB Co-organizer}{European Central Bank}
+\committeemember{Daniel Pele}{Committee Member}{Bucharest University of Economic Studies}
+\committeemember{Wolfgang H\"ardle}{Committee Member}{HU Berlin / WU Vienna}
+\committeemember{Maria Iannario}{Committee Member}{University of Naples Federico II}
+\committeemember{Codruta Mare}{Committee Member}{Babes-Bolyai University}
+\committeemember{Claudia Tarantola}{Committee Member}{University of Milan}
+\committeemember{Alessandra Tanda}{Committee Member}{University of Pavia}
+\end{multicols}
+
+\vspace{8pt}
+
+\begin{tikzpicture}
+  \node[draw=ecbgold!60, rounded corners=6pt, line width=0.6pt,
+        fill=lightgold!30, inner sep=10pt, text width=\textwidth-28pt] {%
+    {\small\color{ecbblue}\bfseries About the Organizing Committee}\\[4pt]
+    {\small\color{medgray}
+    The workshop is jointly organized by the European Central Bank and the MSCA DIGITAL network. The committee comprises experts in banking supervision, digital finance, statistics, and machine learning from leading European institutions. This collaboration reflects the project's commitment to bridging the gap between supervisory practice and academic research in the rapidly evolving field of digital finance.}
+  };
+\end{tikzpicture}
+
+\vfill
+
+\begin{center}
+\begin{tikzpicture}
+  \node[draw=ecbblue!30, rounded corners=8pt, line width=0.5pt,
+        fill=lightblue!30, inner sep=10pt] {%
+    \begin{minipage}{0.8\textwidth}\centering
+    {\small\color{ecbblue}\bfseries Contact the Organizing Committee}\\[4pt]
+    {\small\color{medgray}
+    For questions about the workshop programme, registration, or logistics,\\
+    please reach out via the DIGITAL network website.}\\[4pt]
+    {\small\color{ecbblue}\url{https://digital-finance-msca.eu}}
+    \end{minipage}
+  };
+\end{tikzpicture}
+\end{center}
+
+\clearpage
+
+% ============================================================================
+% PAGE 6: RESEARCH TOPICS
+% ============================================================================
+\goldsection{Research Topics}
+
+\vspace{4pt}
+{\color{medgray} The workshop focuses on three interconnected research themes at the frontier of supervisory technology.}
+\vspace{10pt}
+
+\topiccard{1 \quad AI/ML for Bank Supervision}{%
+Artificial intelligence and machine learning are transforming how supervisory authorities assess bank risk, detect anomalies, and allocate inspection resources. This track explores the application of supervised and unsupervised learning methods to supervisory datasets, stress testing, early warning systems, and risk classification.}{%
+\begin{itemize}[leftmargin=12pt, itemsep=1pt, label={\color{ecbgold}\footnotesize$\blacksquare$}]
+  \item Predictive models for bank distress and early warning indicators
+  \item ML-based anomaly detection in supervisory reporting data
+  \item AI-driven stress testing and scenario analysis
+  \item Explainability and interpretability in supervisory AI models
+\end{itemize}%
+}
+
+\vspace{10pt}
+
+\topiccard{2 \quad NLP for Regulatory Reporting}{%
+Natural language processing offers powerful tools for extracting structured information from the vast volumes of unstructured text that supervisory authorities process daily. This track examines how NLP techniques can automate and enhance regulatory reporting, compliance checking, and document analysis.}{%
+\begin{itemize}[leftmargin=12pt, itemsep=1pt, label={\color{ecbgold}\footnotesize$\blacksquare$}]
+  \item Automated analysis of regulatory filings and annual reports
+  \item Sentiment analysis for supervisory intelligence
+  \item Named entity recognition in financial documents
+  \item Text classification for compliance and risk assessment
+\end{itemize}%
+}
+
+\vspace{10pt}
+
+\topiccard{3 \quad LLMs in Supervision}{%
+Large language models represent the latest frontier in AI for financial supervision. This track investigates how foundation models and generative AI can support supervisory workflows, from drafting supervisory assessments to answering complex regulatory queries and summarizing extensive documentation.}{%
+\begin{itemize}[leftmargin=12pt, itemsep=1pt, label={\color{ecbgold}\footnotesize$\blacksquare$}]
+  \item LLM-assisted supervisory report generation
+  \item Retrieval-augmented generation for regulatory Q\&A
+  \item Fine-tuning foundation models on supervisory corpora
+  \item Governance, bias, and hallucination risks in supervisory LLMs
+\end{itemize}%
+}
+
+\vfill
+{\centering\small\color{medgray}
+Researchers interested in presenting are invited to submit abstracts via the workshop website.\par}
+
+\clearpage
+
+% ============================================================================
+% PAGE 7: PARTNER INSTITUTIONS
+% ============================================================================
+\goldsection{Partner Institutions}
+
+\vspace{4pt}
+{\color{medgray} The DIGITAL network comprises 22 institutions across Europe, combining academic excellence with industry and supervisory expertise.}
+\vspace{8pt}
+
+{\large\bfseries\color{ecbblue} Beneficiary Partners}\\[2pt]
+\textcolor{ecbgold}{\rule{4cm}{1.5pt}}
+\vspace{6pt}
+
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{\textwidth}{Xl}
+\toprule
+\rowcolor{lightblue!40}
+\textbf{Institution} & \textbf{Country}\\
+\midrule
+University of Twente & Netherlands\\
+\rowcolor{lightblue!15}
+WU Vienna & Austria\\
+University of Naples Federico II & Italy\\
+\rowcolor{lightblue!15}
+Kaunas University of Technology & Lithuania\\
+Bucharest University of Economic Studies & Romania\\
+\rowcolor{lightblue!15}
+Babes-Bolyai University & Romania\\
+Cardo AI & Italy\\
+\rowcolor{lightblue!15}
+Poznan University of Economics and Business & Poland\\
+University of Pavia & Italy\\
+\rowcolor{lightblue!15}
+University of Milan & Italy\\
+Bern University of Applied Sciences & Switzerland\\
+\bottomrule
+\end{tabularx}
+
+\vspace{12pt}
+
+{\large\bfseries\color{ecbblue} Associated Partners}\\[2pt]
+\textcolor{ecbgold}{\rule{4cm}{1.5pt}}
+\vspace{6pt}
+
+\begin{tabularx}{\textwidth}{Xl}
+\toprule
+\rowcolor{lightgold!40}
+\textbf{Institution} & \textbf{Country}\\
+\midrule
+European Central Bank & Germany\\
+\rowcolor{lightgold!15}
+Deutsche Bank & Germany\\
+Raiffeisen Bank International & Austria\\
+\rowcolor{lightgold!15}
+Swedbank & Lithuania\\
+Intesa Sanpaolo & Italy\\
+\rowcolor{lightgold!15}
+Deloitte & Italy\\
+Fraunhofer ITWM & Germany\\
+\rowcolor{lightgold!15}
+EIT Digital & Belgium\\
+Athena Research Centre & Greece\\
+\rowcolor{lightgold!15}
+Royalton Partners & Luxembourg\\
+Bank for International Settlements & Switzerland\\
+\bottomrule
+\end{tabularx}
+\renewcommand{\arraystretch}{1.0}
+
+\vfill
+\begin{tikzpicture}
+  \node[draw=ecbblue!40, rounded corners=6pt, line width=0.6pt,
+        fill=lightblue!20, inner sep=8pt, text width=\textwidth-24pt] {%
+    {\small\color{ecbblue}\bfseries Funding Acknowledgment}\\[3pt]
+    {\footnotesize\color{medgray}
+    This workshop is funded by the European Union's Horizon Europe research and innovation programme under the Marie Sk\l{}odowska-Curie Grant Agreement No.\ 101119635 (DIGITAL -- Digital Finance -- Reaching New Frontiers).}
+  };
+\end{tikzpicture}
+
+\clearpage
+
+% ============================================================================
+% PAGE 8: BACK COVER
+% ============================================================================
+\thispagestyle{empty}
+\pagecolor{ecbblue}
+\begin{tikzpicture}[remember picture, overlay]
+  % Background pattern
+  \foreach \i in {1,...,10}{
+    \draw[white, opacity=0.03, line width=0.4pt]
+      ($(current page.south west) + (rand*21, rand*29.7)$) circle (1+rand*2.5);
+  }
+  % Top gold bar
+  \fill[ecbgold] ($(current page.north west)$) rectangle ($(current page.north east) + (0,-3pt)$);
+  % Bottom gold bar
+  \fill[ecbgold, opacity=0.6]
+    ($(current page.south west) + (0,1cm)$) rectangle ($(current page.south east) + (0,1.03cm)$);
+\end{tikzpicture}
+
+\vspace*{3cm}
+\begin{center}
+  {\fontsize{28}{32}\selectfont\bfseries\color{white}
+    Digital Finance\\[4pt] for Supervision}\\[10pt]
+  {\color{ecbgold}\rule{6cm}{1.5pt}}\\[14pt]
+  {\Large\color{white} MSCA DIGITAL Network Workshop}\\[4pt]
+  {\Large\color{white} European Central Bank}\\[4pt]
+  {\large\color{ecbgold} December 3, 2026}\\[30pt]
+
+  % QR Code block
+  \begin{tikzpicture}
+    \node[fill=white, rounded corners=8pt, inner sep=12pt] {%
+      \qrcode[height=3.5cm]{https://digital-finance-msca.eu/events/ecb-workshop-2026}
+    };
+  \end{tikzpicture}\\[14pt]
+  {\large\color{white}\url{https://digital-finance-msca.eu}}\\[30pt]
+
+  % Contact info
+  {\color{ecbgold}\rule{4cm}{0.5pt}}\\[10pt]
+  {\color{white}\large
+    \faIcon{map-marker-alt}\quad Sonnemannstrasse 20, 60314 Frankfurt am Main}\\[6pt]
+  {\color{white}\large
+    \faIcon{globe}\quad digital-finance-msca.eu}\\[6pt]
+  {\color{white}\large
+    \faIcon{envelope}\quad info@digital-finance-msca.eu}\\
+\end{center}
+
+\vfill
+
+% EU Funding Disclaimer
+\begin{center}
+\begin{minipage}{0.85\textwidth}
+  \centering
+  {\color{ecbgold}\rule{0.6\textwidth}{0.5pt}}\\[8pt]
+  {\footnotesize\color{white!80}
+  Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the European Research Executive Agency. Neither the European Union nor the granting authority can be held responsible for them.}\\[8pt]
+  {\footnotesize\color{ecbgold}\bfseries
+  DIGITAL -- Digital Finance -- Reaching New Frontiers\\
+  Grant Agreement No.\ 101119635\\
+  Horizon Europe $\cdot$ Marie Sk\l{}odowska-Curie Actions}
+\end{minipage}
+\end{center}
+\vspace{1cm}
+
+\end{document}

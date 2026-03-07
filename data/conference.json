@@ -1,0 +1,50 @@
+{
+  "name": "Digital Finance for Supervision",
+  "acronym": "DFS2026",
+  "tagline": "MSCA DIGITAL Network Workshop at the European Central Bank",
+  "dates": {
+    "start": "2026-12-03",
+    "end": "2026-12-03",
+    "registration_deadline": "2026-11-15",
+    "call_for_papers_deadline": "2026-10-01"
+  },
+  "venue": {
+    "name": "European Central Bank",
+    "city": "Frankfurt am Main",
+    "country": "Germany",
+    "address": "Sonnemannstrasse 20, 60314 Frankfurt am Main",
+    "website": "https://www.ecb.europa.eu"
+  },
+  "website": {
+    "url": "https://digital-ai-finance.github.io/digital-finance-supervision/",
+    "repo": "Digital-AI-Finance/digital-finance-supervision"
+  },
+  "branding": {
+    "primary_color": "#003399",
+    "secondary_color": "#FFD700",
+    "accent_color": "#2E5090",
+    "dark_color": "#1a1a2e",
+    "light_color": "#f5f5f5",
+    "font_family": "Segoe UI, Tahoma, Geneva, Verdana, sans-serif"
+  },
+  "funding": [
+    {
+      "body": "European Union - Horizon Europe",
+      "program": "Marie Sklodowska-Curie Actions - Doctoral Networks",
+      "project_name": "Digital Finance - Reaching New Frontiers",
+      "project_acronym": "DIGITAL",
+      "grant_ref": "101119635",
+      "logo_required": true,
+      "acknowledgment_text": "This workshop is funded by the European Union's Horizon Europe research and innovation programme under the Marie Sklodowska-Curie Grant Agreement No. 101119635 (DIGITAL - Digital Finance - Reaching New Frontiers)."
+    }
+  ],
+  "contact_email": "joerg.osterrieder@utwente.nl",
+  "copyright": "MSCA DIGITAL Network 2024-2027",
+  "event_type": "half-day",
+  "time": {
+    "start": "10:00",
+    "end": "15:00"
+  },
+  "expected_participants": "30-50",
+  "fee": "Free (grant-funded)"
+}
