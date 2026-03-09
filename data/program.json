@@ -35,6 +35,7 @@
     "active": true,
     "deadline": "2026-10-01",
     "notification": "2026-10-15",
+    "camera_ready": "2026-11-01",
     "topics": [
       "AI/ML for bank supervision",
       "NLP for regulatory reporting and compliance",
@@ -43,6 +44,9 @@
       "Explainable AI for financial regulation",
       "Digital finance and financial stability"
     ],
-    "submission_instructions": "Please submit an extended abstract (max 2 pages) to the organizing committee."
+    "submission_format": "Extended abstract, 2\u20134 pages (excluding references), PDF format. Use single-column layout, 11pt font, standard margins. Include author names, affiliations, and a short abstract (max 200 words).",
+    "review_process": "All submissions will be reviewed by the organizing committee based on relevance, novelty, and potential impact on supervisory practice. Authors of accepted papers will be invited to give a 15-minute presentation.",
+    "submission_email": "joerg.osterrieder@utwente.nl",
+    "submission_instructions": "Submit your extended abstract as a PDF attachment via email to joerg.osterrieder@utwente.nl with the subject line 'DFS2026 Submission'."
   }
 }

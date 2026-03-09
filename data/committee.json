@@ -10,15 +10,6 @@
       "country": "Germany"
     },
     {
-      "name": "Filippo Bartoli",
-      "role": "ECB Co-organizer",
-      "affiliation": "European Central Bank",
-      "affiliation_short": "ECB",
-      "photo": "filippo_bartoli.jpg",
-      "bio": "Expert at the European Central Bank contributing to digital finance research and supervisory technology.",
-      "country": "Germany"
-    },
-    {
       "name": "Joerg Osterrieder",
       "role": "DIGITAL Network Coordinator",
       "affiliation": "University of Twente, Netherlands",
@@ -43,7 +34,7 @@
       "role": "Committee Member",
       "affiliation": "Humboldt-Universitaet zu Berlin / WU Vienna",
       "affiliation_short": "HU Berlin / WU Wien",
-      "photo": "wolfgang_haerdle.jpg",
+      "photo": "wolfgang_haerdle.png",
       "bio": "Professor of Statistics and expert in computational statistics, quantitative finance, and machine learning.",
       "country": "Germany/Austria"
     },
@@ -61,7 +52,7 @@
       "role": "Committee Member",
       "affiliation": "Babes-Bolyai University, Romania",
       "affiliation_short": "BBU",
-      "photo": "codruta_mare.jpg",
+      "photo": "codruta_mare.png",
       "bio": "Professor at Babes-Bolyai University. Research in financial econometrics and digital finance.",
       "country": "Romania"
     },

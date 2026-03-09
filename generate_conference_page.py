@@ -1021,6 +1021,29 @@ def build_about() -> str:
         bridging the gap between academic research and supervisory practice at one of the world's
         most important financial institutions.
       </p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:24px;">
+        <div style="background:var(--gray-50,#f8f9fa);border-radius:10px;padding:18px 20px;">
+          <h4 style="color:var(--primary);font-size:.95rem;margin-bottom:8px;">Registration</h4>
+          <ul style="list-style:disc inside;font-size:.88rem;color:var(--gray-600,#6b7280);">
+            <li><strong>Fee:</strong> Free of charge (grant-funded)</li>
+            <li><strong>Capacity:</strong> 30&ndash;50 participants</li>
+            <li><strong>Deadline:</strong> November 15, 2026</li>
+            <li>Registration details will be announced in summer 2026</li>
+          </ul>
+        </div>
+        <div style="background:var(--gray-50,#f8f9fa);border-radius:10px;padding:18px 20px;">
+          <h4 style="color:var(--primary);font-size:.95rem;margin-bottom:8px;">Contact &amp; Inquiries</h4>
+          <p style="font-size:.88rem;color:var(--gray-600,#6b7280);">
+            For questions about submissions, registration, or the workshop, contact the organizing committee:
+          </p>
+          <p style="margin-top:8px;">
+            <a href="mailto:joerg.osterrieder@utwente.nl" style="color:var(--primary);font-weight:600;">joerg.osterrieder@utwente.nl</a>
+          </p>
+          <p style="margin-top:6px;font-size:.85rem;">
+            <a href="https://www.digital-finance-msca.com" target="_blank" rel="noopener" style="color:var(--accent);">DIGITAL Network Website &rarr;</a>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1031,8 +1054,28 @@ def build_cfp(program_data: dict) -> str:
     cfp = program_data.get("call_for_papers", {})
     topics = cfp.get("topics", [])
     deadline = cfp.get("deadline", "2026-10-01")
+    notification = cfp.get("notification", "")
+    camera_ready = cfp.get("camera_ready", "")
     instructions = cfp.get("submission_instructions", "")
+    submission_format = cfp.get("submission_format", "")
+    review_process = cfp.get("review_process", "")
+    submission_email = cfp.get("submission_email", "joerg.osterrieder@utwente.nl")
     topic_items = "\n".join(f"<li>{t}</li>" for t in topics)
+
+    # Build important dates list
+    dates_html = f'<li><strong>Submission deadline:</strong> {deadline}</li>'
+    if notification:
+        dates_html += f'\n            <li><strong>Notification of acceptance:</strong> {notification}</li>'
+    if camera_ready:
+        dates_html += f'\n            <li><strong>Camera-ready version:</strong> {camera_ready}</li>'
+
+    # Build format/review section
+    details_html = ""
+    if submission_format:
+        details_html += f'<p style="margin-bottom:10px;"><strong>Format:</strong> {submission_format}</p>'
+    if review_process:
+        details_html += f'<p style="margin-bottom:10px;"><strong>Review:</strong> {review_process}</p>'
+
     return f"""
 <section id="cfp" class="section-padding">
   <div class="container">
@@ -1050,10 +1093,13 @@ def build_cfp(program_data: dict) -> str:
       <div class="cfp-info">
         <h3>Submission Details</h3>
         <p>{instructions}</p>
-        <p>Submissions should be sent to the organizing committee via email.</p>
-        <p style="margin-top:16px;"><span class="cfp-deadline">Deadline: {deadline}</span></p>
+        {details_html}
+        <h4 style="margin-top:16px;color:var(--primary);font-size:.95rem;">Important Dates</h4>
+        <ul style="list-style:none;padding:0;margin:8px 0 0 0;font-size:.92rem;">
+            {dates_html}
+        </ul>
         <p style="margin-top:18px;">
-          <a href="mailto:joerg.osterrieder@utwente.nl" class="btn btn-primary">Submit Abstract</a>
+          <a href="mailto:{submission_email}?subject=DFS2026%20Submission" class="btn btn-primary">Submit Abstract</a>
         </p>
       </div>
     </div>
@@ -1247,6 +1293,22 @@ def build_venue(conf: dict) -> str:
             <li>Hotels in the Ostend district (walking distance)</li>
             <li>City center hotels (10 min by public transport)</li>
             <li>Frankfurt Hauptbahnhof area (well connected)</li>
+          </ul>
+        </div>
+        <div class="venue-practical" style="margin-top:14px;">
+          <h4>ECB Visitor Access</h4>
+          <ul>
+            <li>All participants must be pre-registered for building access</li>
+            <li>Please bring a valid photo ID (passport or national ID card)</li>
+            <li>Access details will be sent to registered participants by email</li>
+          </ul>
+        </div>
+        <div class="venue-practical" style="margin-top:14px;">
+          <h4>Visa Information</h4>
+          <ul>
+            <li>EU/EEA citizens: no visa required</li>
+            <li>Non-EU participants: check <a href="https://www.auswaertiges-amt.de/en/visa-service" target="_blank" rel="noopener">German visa requirements</a></li>
+            <li>Invitation letters for visa purposes available upon request</li>
           </ul>
         </div>
       </div>

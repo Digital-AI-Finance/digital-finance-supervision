@@ -1,172 +1,28 @@
 {
-  "partners": [
-    {
-      "name": "University of Twente",
-      "acronym": "UTwente",
-      "country": "Netherlands",
-      "logo": "utwente.svg",
-      "website": "https://www.utwente.nl",
-      "is_coordinator": true
-    },
-    {
-      "name": "WU Vienna University of Economics and Business",
-      "acronym": "WU",
-      "country": "Austria",
-      "logo": "wu_wien.svg",
-      "website": "https://www.wu.ac.at"
-    },
-    {
-      "name": "University of Naples Federico II",
-      "acronym": "UNINA",
-      "country": "Italy",
-      "logo": "unina.svg",
-      "website": "https://www.unina.it"
-    },
-    {
-      "name": "Kaunas University of Technology",
-      "acronym": "KTU",
-      "country": "Lithuania",
-      "logo": "ktu.svg",
-      "website": "https://en.ktu.edu"
-    },
-    {
-      "name": "Bucharest University of Economic Studies",
-      "acronym": "ASE",
-      "country": "Romania",
-      "logo": "ase.svg",
-      "website": "https://www.ase.ro"
-    },
-    {
-      "name": "Babes-Bolyai University",
-      "acronym": "BBU",
-      "country": "Romania",
-      "logo": "bbu.svg",
-      "website": "https://www.ubbcluj.ro"
-    },
-    {
-      "name": "Cardo AI",
-      "acronym": "CARDO",
-      "country": "Italy",
-      "logo": "cardo.svg",
-      "website": "https://cardoai.com",
-      "type": "SME"
-    },
-    {
-      "name": "Poznan University of Economics and Business",
-      "acronym": "UEP",
-      "country": "Poland",
-      "logo": "uep.svg",
-      "website": "https://ue.poznan.pl"
-    },
-    {
-      "name": "European Central Bank",
-      "acronym": "ECB",
-      "country": "Germany",
-      "logo": "ecb.svg",
-      "website": "https://www.ecb.europa.eu",
-      "type": "associated_partner",
-      "is_host": true
-    },
-    {
-      "name": "Bern University of Applied Sciences",
-      "acronym": "BFH",
-      "country": "Switzerland",
-      "logo": "bfh.svg",
-      "website": "https://www.bfh.ch"
-    },
-    {
-      "name": "Deutsche Bank",
-      "acronym": "DB",
-      "country": "Germany",
-      "logo": "db.svg",
-      "website": "https://www.db.com",
-      "type": "associated_partner"
-    },
-    {
-      "name": "Raiffeisen Bank International",
-      "acronym": "RBI",
-      "country": "Austria",
-      "logo": "rbi.svg",
-      "website": "https://www.rbinternational.com",
-      "type": "associated_partner"
-    },
-    {
-      "name": "Swedbank",
-      "acronym": "SWED",
-      "country": "Lithuania",
-      "logo": "swedbank.svg",
-      "website": "https://www.swedbank.com",
-      "type": "associated_partner"
-    },
-    {
-      "name": "Intesa Sanpaolo",
-      "acronym": "ISP",
-      "country": "Italy",
-      "logo": "intesa.svg",
-      "website": "https://www.intesasanpaolo.com",
-      "type": "associated_partner"
-    },
-    {
-      "name": "Deloitte",
-      "acronym": "DEL",
-      "country": "Italy",
-      "logo": "deloitte.svg",
-      "website": "https://www.deloitte.com",
-      "type": "associated_partner"
-    },
-    {
-      "name": "Fraunhofer Institute for Industrial Mathematics",
-      "acronym": "ITWM",
-      "country": "Germany",
-      "logo": "fraunhofer.svg",
-      "website": "https://www.itwm.fraunhofer.de",
-      "type": "associated_partner"
-    },
-    {
-      "name": "EIT Digital",
-      "acronym": "EIT",
-      "country": "Belgium",
-      "logo": "eit.svg",
-      "website": "https://www.eitdigital.eu",
-      "type": "associated_partner"
-    },
-    {
-      "name": "Athena Research Centre",
-      "acronym": "ARC",
-      "country": "Greece",
-      "logo": "arc.svg",
-      "website": "https://www.athenarc.gr",
-      "type": "associated_partner"
-    },
-    {
-      "name": "Royalton Partners",
-      "acronym": "RP",
-      "country": "Luxembourg",
-      "logo": "royalton.svg",
-      "website": "https://www.royaltonpartners.com",
-      "type": "associated_partner"
-    },
-    {
-      "name": "Bank for International Settlements",
-      "acronym": "BIS",
-      "country": "Switzerland",
-      "logo": "bis.svg",
-      "website": "https://www.bis.org",
-      "type": "associated_partner"
-    },
-    {
-      "name": "University of Pavia",
-      "acronym": "UNIPV",
-      "country": "Italy",
-      "logo": "unipv.svg",
-      "website": "https://www.unipv.it"
-    },
-    {
-      "name": "University of Milan",
-      "acronym": "UNIMI",
-      "country": "Italy",
-      "logo": "unimi.svg",
-      "website": "https://www.unimi.it"
-    }
+  "beneficiary_partners": [
+    {"name": "University of Twente", "short": "UTwente", "country": "Netherlands", "logo": "utwente.svg", "website": "https://www.utwente.nl", "is_coordinator": true, "is_host": false},
+    {"name": "WU Vienna University of Economics and Business", "short": "WU", "country": "Austria", "logo": "wu_wien.svg", "website": "https://www.wu.ac.at", "is_host": false},
+    {"name": "University of Naples Federico II", "short": "UNINA", "country": "Italy", "logo": "unina.svg", "website": "https://www.unina.it", "is_host": false},
+    {"name": "Kaunas University of Technology", "short": "KTU", "country": "Lithuania", "logo": "ktu.svg", "website": "https://en.ktu.edu", "is_host": false},
+    {"name": "Bucharest University of Economic Studies", "short": "ASE", "country": "Romania", "logo": "ase.svg", "website": "https://www.ase.ro", "is_host": false},
+    {"name": "Babes-Bolyai University", "short": "BBU", "country": "Romania", "logo": "bbu.svg", "website": "https://www.ubbcluj.ro", "is_host": false},
+    {"name": "Cardo AI", "short": "CARDO", "country": "Italy", "logo": "cardo.svg", "website": "https://cardoai.com", "is_host": false},
+    {"name": "Poznan University of Economics and Business", "short": "UEP", "country": "Poland", "logo": "uep.svg", "website": "https://ue.poznan.pl", "is_host": false},
+    {"name": "University of Pavia", "short": "UNIPV", "country": "Italy", "logo": "unipv.svg", "website": "https://www.unipv.it", "is_host": false},
+    {"name": "University of Milan", "short": "UNIMI", "country": "Italy", "logo": "unimi.svg", "website": "https://www.unimi.it", "is_host": false},
+    {"name": "Bern University of Applied Sciences", "short": "BFH", "country": "Switzerland", "logo": "bfh.svg", "website": "https://www.bfh.ch", "is_host": false}
+  ],
+  "associated_partners": [
+    {"name": "European Central Bank", "short": "ECB", "country": "Germany", "logo": "ecb.svg", "website": "https://www.ecb.europa.eu", "is_host": true},
+    {"name": "Deutsche Bank", "short": "DB", "country": "Germany", "logo": "db.svg", "website": "https://www.db.com", "is_host": false},
+    {"name": "Raiffeisen Bank International", "short": "RBI", "country": "Austria", "logo": "rbi.svg", "website": "https://www.rbinternational.com", "is_host": false},
+    {"name": "Swedbank", "short": "SWED", "country": "Lithuania", "logo": "swedbank.svg", "website": "https://www.swedbank.com", "is_host": false},
+    {"name": "Intesa Sanpaolo", "short": "ISP", "country": "Italy", "logo": "intesa.svg", "website": "https://www.intesasanpaolo.com", "is_host": false},
+    {"name": "Deloitte", "short": "DEL", "country": "Italy", "logo": "deloitte.svg", "website": "https://www.deloitte.com", "is_host": false},
+    {"name": "Fraunhofer Institute for Industrial Mathematics", "short": "ITWM", "country": "Germany", "logo": "fraunhofer.svg", "website": "https://www.itwm.fraunhofer.de", "is_host": false},
+    {"name": "EIT Digital", "short": "EIT", "country": "Belgium", "logo": "eit.svg", "website": "https://www.eitdigital.eu", "is_host": false},
+    {"name": "Athena Research Centre", "short": "ARC", "country": "Greece", "logo": "arc.svg", "website": "https://www.athenarc.gr", "is_host": false},
+    {"name": "Royalton Partners", "short": "RP", "country": "Luxembourg", "logo": "royalton.svg", "website": "https://www.royaltonpartners.com", "is_host": false},
+    {"name": "Bank for International Settlements", "short": "BIS", "country": "Switzerland", "logo": "bis.svg", "website": "https://www.bis.org", "is_host": false}
   ]
 }

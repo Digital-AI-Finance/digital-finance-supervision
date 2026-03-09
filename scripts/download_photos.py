@@ -25,7 +25,13 @@ PEOPLE_DIR = BASE_DIR / "assets" / "people"
 # committee.json (e.g. "joerg_osterrieder.jpg").
 # ---------------------------------------------------------------------------
 PHOTO_URLS: dict[str, str] = {
-    # "joerg_osterrieder.jpg": "https://example.com/photo.jpg",
+    "joerg_osterrieder.jpg": "https://loop.frontiersin.org/images/profile/587887/203",
+    "daniel_pele.jpg": "https://analytics.fabiz.ase.ro/wp-content/uploads/2023/05/Dan-Traian-Pele.jpg",
+    "wolfgang_haerdle.png": "https://www.imba.fabiz.ase.ro/wp-content/uploads/2018/09/Wolfgang-Hardle_2-263x263.png",
+    "maria_iannario.jpg": "https://loop.frontiersin.org/images/profile/2181453/203",
+    "alessandra_tanda.jpg": "https://loop.frontiersin.org/images/profile/669488/203",
+    "claudia_tarantola.jpg": "https://cepr.org/sites/default/files/styles/logo/public/profile-photos/236268-claudia_527a13ba45baf3e65044f6cd753c18e8.jpg?itok=ZmfI2aJh",
+    "codruta_mare.png": "https://econ.ubbcluj.ro/cv/poze/283_MicrosoftTeams-image-(7).png",
 }
 
 
