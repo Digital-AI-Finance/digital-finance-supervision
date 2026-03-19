@@ -608,64 +608,83 @@ Large language models and generative AI for supervisory processes and regulatory
 
 \sectiontitle{Partner Institutions}
 
+% Logo+name macro: logo file, short name, country
+\newcommand{\partnerlogo}[3]{%
+  \begin{minipage}[t]{0.23\textwidth}
+    \centering
+    \IfFileExists{assets/logos/#1}{%
+      \includegraphics[height=1cm,width=1.8cm,keepaspectratio]{assets/logos/#1}%
+    }{%
+      \begin{tikzpicture}
+        \fill[conflight] (0,0) circle (0.5cm);
+        \node[font=\scriptsize\bfseries\color{confblue}] at (0,0) {#2};
+      \end{tikzpicture}%
+    }\\[2pt]
+    {\scriptsize\bfseries #2}\\
+    {\tiny\color{gray}#3}
+  \end{minipage}%
+}
+
 % Beneficiary Partners
 {\normalsize\bfseries\color{confblue} Beneficiary Partners}\par\vspace{1pt}
-{\color{confgold}\rule{3.5cm}{1.5pt}}\par\vspace{3pt}
+{\color{confgold}\rule{3.5cm}{1.5pt}}\par\vspace{4pt}
 
-\renewcommand{\arraystretch}{1.15}
-{\small
-\noindent\begin{tabularx}{\textwidth}{@{}Xl@{}}
-\toprule
-\textbf{Institution} & \textbf{Country}\\
-\midrule
-\rowcolor{conflight}
-University of Twente (Coordinator) & Netherlands\\
-WU Vienna University of Economics and Business & Austria\\
-\rowcolor{conflight}
-University of Naples Federico II & Italy\\
-Kaunas University of Technology & Lithuania\\
-\rowcolor{conflight}
-Bucharest University of Economic Studies & Romania\\
-Babes-Bolyai University & Romania\\
-\rowcolor{conflight}
-Cardo AI & Italy\\
-Poznan University of Economics and Business & Poland\\
-\rowcolor{conflight}
-University of Pavia & Italy\\
-University of Milan & Italy\\
-\rowcolor{conflight}
-Bern University of Applied Sciences & Switzerland\\
-\bottomrule
-\end{tabularx}
-}
+\noindent
+\partnerlogo{utwente.png}{UTwente}{Netherlands}%
+\hfill
+\partnerlogo{wu_wien.png}{WU Vienna}{Austria}%
+\hfill
+\partnerlogo{unina.png}{UNINA}{Italy}%
+\hfill
+\partnerlogo{ktu.png}{KTU}{Lithuania}%
 
 \vspace{6pt}
 
+\noindent
+\partnerlogo{ase.png}{ASE Bucharest}{Romania}%
+\hfill
+\partnerlogo{bbu.png}{BBU}{Romania}%
+\hfill
+\partnerlogo{cardo.png}{Cardo AI}{Italy}%
+\hfill
+\partnerlogo{uep.png}{UEP Poznan}{Poland}%
+
+\vspace{6pt}
+
+\noindent
+\partnerlogo{unipv.png}{UNIPV}{Italy}%
+\hfill
+\partnerlogo{unimi.png}{UNIMI}{Italy}%
+\hfill
+\partnerlogo{bfh.png}{BFH}{Switzerland}%
+\hfill
+\begin{minipage}[t]{0.23\textwidth}\mbox{}\end{minipage}%
+
+\vspace{8pt}
+
 % Associated Partners
 {\normalsize\bfseries\color{confblue} Associated Partners}\par\vspace{1pt}
-{\color{confgold}\rule{3.5cm}{1.5pt}}\par\vspace{3pt}
+{\color{confgold}\rule{3.5cm}{1.5pt}}\par\vspace{4pt}
 
-{\small
-\noindent\begin{tabularx}{\textwidth}{@{}Xl@{}}
-\toprule
-\textbf{Institution} & \textbf{Country}\\
-\midrule
-\rowcolor{conflight}
-European Central Bank & Germany\\
-Deutsche Bank & Germany\\
-\rowcolor{conflight}
-Raiffeisen Bank International & Austria\\
-Swedbank & Lithuania\\
-\rowcolor{conflight}
-Fraunhofer Institute for Industrial Mathematics & Germany\\
-EIT Digital & Belgium\\
-\rowcolor{conflight}
-Athena Research Centre & Greece\\
-Royalton Partners & Luxembourg\\
-\bottomrule
-\end{tabularx}
-}
-\renewcommand{\arraystretch}{1.0}
+\noindent
+\partnerlogo{ecb.png}{ECB}{Germany}%
+\hfill
+\partnerlogo{db.png}{Deutsche Bank}{Germany}%
+\hfill
+\partnerlogo{rbi.png}{RBI}{Austria}%
+\hfill
+\partnerlogo{swedbank.png}{Swedbank}{Lithuania}%
+
+\vspace{6pt}
+
+\noindent
+\partnerlogo{fraunhofer.png}{Fraunhofer}{Germany}%
+\hfill
+\partnerlogo{eit.png}{EIT Digital}{Belgium}%
+\hfill
+\partnerlogo{arc.png}{Athena RC}{Greece}%
+\hfill
+\partnerlogo{royalton.png}{Royalton}{Luxembourg}%
 
 \vspace{6pt}
 
