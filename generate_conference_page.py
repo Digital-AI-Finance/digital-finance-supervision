@@ -313,12 +313,12 @@ section {
     margin-top: 0;
 }
 
-.section-padding { padding: 72px 48px; }
+.section-padding { padding: 44px 48px; }
 .section-alt { background: var(--gray-100); }
 
 .section-header {
     text-align: center;
-    margin-bottom: 48px;
+    margin-bottom: 28px;
 }
 .section-header h2 {
     font-size: 1.9rem;
@@ -348,12 +348,12 @@ section {
 /* ---- Hero ---- */
 .hero {
     position: relative;
-    min-height: 520px;
+    min-height: 400px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 100px 40px 80px;
+    padding: 64px 40px 48px;
     margin-top: var(--topbar-h);
     background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
     color: var(--white);
@@ -370,24 +370,24 @@ section {
 .hero .tagline { font-size: 1.15rem; opacity: .92; margin-bottom: 8px; }
 .hero .date-venue {
     font-size: 1rem;
-    margin-bottom: 28px;
+    margin-bottom: 18px;
     opacity: .85;
 }
 .hero .date-venue strong { color: var(--secondary); }
 
 .countdown {
     display: flex;
-    gap: 18px;
+    gap: 14px;
     justify-content: center;
-    margin-bottom: 32px;
+    margin-bottom: 22px;
 }
 .countdown-unit {
     background: rgba(255,255,255,.1);
     backdrop-filter: blur(4px);
     border: 1px solid rgba(255,215,0,.25);
     border-radius: var(--radius);
-    padding: 14px 18px;
-    min-width: 78px;
+    padding: 10px 14px;
+    min-width: 68px;
     text-align: center;
 }
 .countdown-unit .num {
@@ -415,8 +415,8 @@ section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 12px;
-    padding: 32px 20px;
+    gap: 10px;
+    padding: 22px 20px;
 }
 .stat-item {
     text-align: center;
@@ -462,10 +462,10 @@ section {
 .cfp-deadline { font-size: 1.15rem; font-weight: 700; color: var(--primary); }
 
 /* ---- Committee ---- */
-.committee-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.committee-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .member-card {
     text-align: center;
-    padding: 28px 18px;
+    padding: 20px 14px;
     border-radius: var(--radius);
     background: var(--white);
     box-shadow: var(--shadow-sm);
@@ -499,7 +499,7 @@ section {
 .dates-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 .date-card {
     text-align: center;
-    padding: 28px 16px;
+    padding: 20px 14px;
     border-radius: var(--radius);
     background: var(--white);
     box-shadow: var(--shadow-sm);
@@ -539,7 +539,7 @@ section {
 .topic-card {
     background: var(--white);
     border-radius: var(--radius);
-    padding: 32px 24px;
+    padding: 22px 20px;
     box-shadow: var(--shadow-sm);
     transition: transform var(--transition), box-shadow var(--transition);
     border-top: 4px solid var(--primary);
@@ -588,7 +588,7 @@ section {
     padding-bottom: 8px;
     border-bottom: 2px solid var(--gray-200);
 }
-.partners-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 18px; margin-bottom: 40px; }
+.partners-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; margin-bottom: 28px; }
 .partner-card {
     background: var(--white);
     border-radius: var(--radius);
@@ -638,7 +638,7 @@ section {
 .footer {
     background: var(--dark);
     color: var(--gray-300);
-    padding: 48px 48px 28px;
+    padding: 36px 48px 22px;
 }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 36px; margin-bottom: 28px; }
 .footer h4 { color: var(--secondary); font-size: .9rem; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 12px; }
@@ -674,8 +674,8 @@ section {
     .sidebar { display: none; }
     .topbar { left: 0; }
     .main-content { margin-left: 0; }
-    .section-padding { padding: 48px 20px; }
-    .hero { padding: 80px 20px 60px; min-height: 420px; }
+    .section-padding { padding: 32px 20px; }
+    .hero { padding: 56px 20px 40px; min-height: 360px; }
     .hero h1 { font-size: 1.8rem; }
     .countdown { gap: 10px; }
     .countdown-unit { padding: 10px 12px; min-width: 60px; }
@@ -752,8 +752,8 @@ section {
 
 JS = r"""
 (function(){
-    // Countdown to December 3 2026
-    var target = new Date('2026-12-03T10:00:00+01:00').getTime();
+    // Countdown to November 30 2026
+    var target = new Date('2026-11-30T10:00:00+01:00').getTime();
     function updateCountdown(){
         var now = Date.now();
         var diff = target - now;
@@ -922,7 +922,7 @@ def build_hero(conf: dict) -> str:
   <div class="hero-content">
     <h1>{name}</h1>
     <p class="tagline">{tagline}</p>
-    <p class="date-venue"><strong>December 3, 2026</strong> &mdash; {venue_name}, {city}</p>
+    <p class="date-venue"><strong>November 30, 2026</strong> &mdash; {venue_name}, {city} &bull; Hybrid event (speakers onsite)</p>
     <div class="countdown">
       <div class="countdown-unit"><span class="num" id="cd-days">0</span><span class="label">Days</span></div>
       <div class="countdown-unit"><span class="num" id="cd-hours">0</span><span class="label">Hours</span></div>
@@ -987,10 +987,10 @@ def build_news(news_data: list) -> str:
 def build_stats() -> str:
     stats = [
         ("30+", "Participants"),
-        ("6", "Research Talks"),
+        ("8", "Research Talks"),
         ("2", "Keynotes"),
         ("1", "Panel Discussion"),
-        ("20+", "Partner Institutions"),
+        ("19+", "Partner Institutions"),
     ]
     items = "\n".join(
         f'<div class="stat-item"><span class="stat-num" data-target="{val}">0</span><span class="stat-label">{label}</span></div>'
@@ -1008,17 +1008,16 @@ def build_about() -> str:
     </div>
     <div class="about-text">
       <p>
-        <strong>Digital Finance for Supervision</strong> is a half-day workshop organized by the
-        MSCA DIGITAL network at the European Central Bank in Frankfurt am Main. The workshop
-        brings together leading researchers and practitioners to explore how cutting-edge
-        technologies&mdash;artificial intelligence, machine learning, and natural language
-        processing&mdash;can transform banking supervision and regulatory processes.
+        <strong>Digital Finance for Supervision</strong> is a hybrid half-day workshop organized by the
+        MSCA DIGITAL network at the European Central Bank in Frankfurt am Main. All speakers present onsite;
+        remote participation is available via live stream. The workshop brings together researchers
+        and practitioners to explore how AI, machine learning, and NLP can transform banking supervision.
       </p>
       <p>
-        The event features two invited keynote presentations, a panel discussion on the role of
-        large language models in supervisory processes, and six contributed research talks selected
-        through an open call for papers. It offers a unique forum for SupTech innovation,
-        bridging the gap between academic research and supervisory practice at one of the world's
+        The event features two keynote presentations (30 min each), a panel discussion on LLMs in
+        supervisory processes, and eight contributed research talks selected through an open call for papers.
+        We particularly welcome contributions from PhD students and early-career researchers.
+        The workshop bridges academic research and supervisory practice at one of the world's
         most important financial institutions.
       </p>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:24px;">
@@ -1027,7 +1026,7 @@ def build_about() -> str:
           <ul style="list-style:disc inside;font-size:.88rem;color:var(--gray-600,#6b7280);">
             <li><strong>Fee:</strong> Free of charge (grant-funded)</li>
             <li><strong>Capacity:</strong> 30&ndash;50 participants</li>
-            <li><strong>Deadline:</strong> November 15, 2026</li>
+            <li><strong>Deadline:</strong> November 1, 2026</li>
             <li>Registration details will be announced in summer 2026</li>
           </ul>
         </div>
@@ -1081,7 +1080,7 @@ def build_cfp(program_data: dict) -> str:
   <div class="container">
     <div class="section-header">
       <h2>Call for Papers</h2>
-      <p>We invite submissions on all aspects of digital finance applied to banking supervision.</p>
+      <p>We invite submissions on all aspects of digital finance applied to banking supervision. PhD students and early-career researchers are especially encouraged to contribute.</p>
     </div>
     <div class="cfp-grid">
       <div>
@@ -1150,10 +1149,10 @@ def build_committee(committee_data: dict) -> str:
 
 def build_dates() -> str:
     dates = [
-        ("\U0001F4E2", "October 1, 2026", "Call for Papers Deadline", False),
-        ("\U0001F4E7", "October 15, 2026", "Notification of Acceptance", False),
-        ("\U0001F4DD", "November 15, 2026", "Registration Deadline", False),
-        ("\U0001F3DB\uFE0F", "December 3, 2026", "Workshop Day", True),
+        ("\U0001F4E2", "September 15, 2026", "Call for Papers Deadline", False),
+        ("\U0001F4E7", "October 1, 2026", "Notification of Acceptance", False),
+        ("\U0001F4DD", "November 1, 2026", "Registration Deadline", False),
+        ("\U0001F3DB\uFE0F", "November 30, 2026", "Workshop Day", True),
     ]
     cards = []
     for icon, date, label, hl in dates:
@@ -1210,7 +1209,7 @@ def build_program(program_data: dict) -> str:
   <div class="container">
     <div class="section-header">
       <h2>Program</h2>
-      <p>December 3, 2026 &mdash; Half-day workshop (10:00 &ndash; 15:00 CET)</p>
+      <p>November 30, 2026 &mdash; Hybrid half-day workshop (10:00 &ndash; 15:00 CET) &bull; Speakers onsite</p>
     </div>
     <table class="program-table">
       <thead><tr><th>Time</th><th>Event</th><th>Type</th></tr></thead>

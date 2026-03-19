@@ -3,10 +3,10 @@
   "acronym": "DFS2026",
   "tagline": "MSCA DIGITAL Network Workshop at the European Central Bank",
   "dates": {
-    "start": "2026-12-03",
-    "end": "2026-12-03",
-    "registration_deadline": "2026-11-15",
-    "call_for_papers_deadline": "2026-10-01"
+    "start": "2026-11-30",
+    "end": "2026-11-30",
+    "registration_deadline": "2026-11-01",
+    "call_for_papers_deadline": "2026-09-15"
   },
   "venue": {
     "name": "European Central Bank",
@@ -42,7 +42,9 @@
   ],
   "contact_email": "joerg.osterrieder@utwente.nl",
   "copyright": "MSCA DIGITAL Network 2024-2027",
-  "event_type": "half-day",
+  "event_type": "hybrid half-day",
+  "format": "hybrid",
+  "format_details": "Speakers present onsite; remote participation available via live stream",
   "time": {
     "start": "10:00",
     "end": "15:00"

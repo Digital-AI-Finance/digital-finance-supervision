@@ -1,21 +1,23 @@
 {
   "days": [
     {
-      "date": "2026-12-03",
+      "date": "2026-11-30",
       "title": "Digital Finance for Supervision",
-      "type": "in-person",
+      "type": "hybrid",
       "items": [
         {"time": "10:00", "type": "break", "title": "Registration & Welcome Coffee"},
         {"time": "10:15", "type": "ceremony", "title": "Opening Remarks", "description": "Welcome by ECB and DIGITAL Network representatives"},
-        {"time": "10:30", "type": "keynote", "title": "Keynote 1", "speaker": "TBA", "description": "Invited keynote on AI/ML in bank supervision"},
-        {"time": "11:15", "type": "session", "title": "Research Session 1: AI/ML for Bank Supervision", "description": "3 contributed talks, 15 minutes each", "talks": [
+        {"time": "10:30", "type": "keynote", "title": "Keynote 1", "speaker": "TBA", "description": "Invited keynote on AI/ML in bank supervision (30 min)"},
+        {"time": "11:00", "type": "session", "title": "Research Session 1: AI/ML for Bank Supervision", "description": "4 contributed talks, 15 minutes each", "talks": [
+          {"title": "TBA", "speaker": "TBA", "time": "11:00"},
           {"title": "TBA", "speaker": "TBA", "time": "11:15"},
           {"title": "TBA", "speaker": "TBA", "time": "11:30"},
           {"title": "TBA", "speaker": "TBA", "time": "11:45"}
         ]},
         {"time": "12:00", "type": "break", "title": "Lunch Break & Networking"},
-        {"time": "13:00", "type": "keynote", "title": "Keynote 2 / Panel: LLMs in Supervision", "speaker": "TBA", "description": "Panel discussion on the role of large language models in supervisory processes"},
-        {"time": "13:45", "type": "session", "title": "Research Session 2: NLP & SupTech Applications", "description": "3 contributed talks, 15 minutes each", "talks": [
+        {"time": "13:00", "type": "keynote", "title": "Keynote 2 / Panel: LLMs in Supervision", "speaker": "TBA", "description": "Panel discussion on the role of large language models in supervisory processes (30 min)"},
+        {"time": "13:30", "type": "session", "title": "Research Session 2: NLP & SupTech Applications", "description": "4 contributed talks, 15 minutes each", "talks": [
+          {"title": "TBA", "speaker": "TBA", "time": "13:30"},
           {"title": "TBA", "speaker": "TBA", "time": "13:45"},
           {"title": "TBA", "speaker": "TBA", "time": "14:00"},
           {"title": "TBA", "speaker": "TBA", "time": "14:15"}
@@ -26,16 +28,16 @@
     }
   ],
   "session_format": {
-    "duration_minutes": 45,
-    "talks_per_session": 3,
+    "duration_minutes": 60,
+    "talks_per_session": 4,
     "talk_duration_minutes": 15,
     "has_discussion": false
   },
   "call_for_papers": {
     "active": true,
-    "deadline": "2026-10-01",
-    "notification": "2026-10-15",
-    "camera_ready": "2026-11-01",
+    "deadline": "2026-09-15",
+    "notification": "2026-10-01",
+    "camera_ready": "2026-10-15",
     "topics": [
       "AI/ML for bank supervision",
       "NLP for regulatory reporting and compliance",
@@ -45,8 +47,8 @@
       "Digital finance and financial stability"
     ],
     "submission_format": "Extended abstract, 2\u20134 pages (excluding references), PDF format. Use single-column layout, 11pt font, standard margins. Include author names, affiliations, and a short abstract (max 200 words).",
-    "review_process": "All submissions will be reviewed by the organizing committee based on relevance, novelty, and potential impact on supervisory practice. Authors of accepted papers will be invited to give a 15-minute presentation.",
+    "review_process": "All submissions will be reviewed by the organizing committee based on relevance, novelty, and potential impact on supervisory practice. Authors of accepted papers will be invited to give a 15-minute presentation. We particularly encourage submissions from PhD students and early-career researchers.",
     "submission_email": "joerg.osterrieder@utwente.nl",
-    "submission_instructions": "Submit your extended abstract as a PDF attachment via email to joerg.osterrieder@utwente.nl with the subject line 'DFS2026 Submission'."
+    "submission_instructions": "Submit your extended abstract as a PDF attachment via email to joerg.osterrieder@utwente.nl with the subject line 'DFS2026 Submission'. PhD students should indicate their PhD program and expected completion date."
   }
 }

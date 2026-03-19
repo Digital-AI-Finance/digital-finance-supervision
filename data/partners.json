@@ -17,12 +17,9 @@
     {"name": "Deutsche Bank", "short": "DB", "country": "Germany", "logo": "db.svg", "website": "https://www.db.com", "is_host": false},
     {"name": "Raiffeisen Bank International", "short": "RBI", "country": "Austria", "logo": "rbi.svg", "website": "https://www.rbinternational.com", "is_host": false},
     {"name": "Swedbank", "short": "SWED", "country": "Lithuania", "logo": "swedbank.svg", "website": "https://www.swedbank.com", "is_host": false},
-    {"name": "Intesa Sanpaolo", "short": "ISP", "country": "Italy", "logo": "intesa.svg", "website": "https://www.intesasanpaolo.com", "is_host": false},
-    {"name": "Deloitte", "short": "DEL", "country": "Italy", "logo": "deloitte.svg", "website": "https://www.deloitte.com", "is_host": false},
     {"name": "Fraunhofer Institute for Industrial Mathematics", "short": "ITWM", "country": "Germany", "logo": "fraunhofer.svg", "website": "https://www.itwm.fraunhofer.de", "is_host": false},
     {"name": "EIT Digital", "short": "EIT", "country": "Belgium", "logo": "eit.svg", "website": "https://www.eitdigital.eu", "is_host": false},
     {"name": "Athena Research Centre", "short": "ARC", "country": "Greece", "logo": "arc.svg", "website": "https://www.athenarc.gr", "is_host": false},
-    {"name": "Royalton Partners", "short": "RP", "country": "Luxembourg", "logo": "royalton.svg", "website": "https://www.royaltonpartners.com", "is_host": false},
-    {"name": "Bank for International Settlements", "short": "BIS", "country": "Switzerland", "logo": "bis.svg", "website": "https://www.bis.org", "is_host": false}
+    {"name": "Royalton Partners", "short": "RP", "country": "Luxembourg", "logo": "royalton.svg", "website": "https://www.royaltonpartners.com", "is_host": false}
   ]
 }

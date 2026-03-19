@@ -1,6 +1,6 @@
 # Digital Finance for Supervision
 
-ECB/MSCA DIGITAL Network half-day workshop, December 3, 2026.
+ECB/MSCA DIGITAL Network hybrid half-day workshop, November 30, 2026.
 
 ## Build Commands
 
