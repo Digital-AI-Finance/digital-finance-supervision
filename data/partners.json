@@ -1,25 +1,25 @@
 {
   "beneficiary_partners": [
-    {"name": "University of Twente", "short": "UTwente", "country": "Netherlands", "logo": "utwente.svg", "website": "https://www.utwente.nl", "is_coordinator": true, "is_host": false},
-    {"name": "WU Vienna University of Economics and Business", "short": "WU", "country": "Austria", "logo": "wu_wien.svg", "website": "https://www.wu.ac.at", "is_host": false},
-    {"name": "University of Naples Federico II", "short": "UNINA", "country": "Italy", "logo": "unina.svg", "website": "https://www.unina.it", "is_host": false},
-    {"name": "Kaunas University of Technology", "short": "KTU", "country": "Lithuania", "logo": "ktu.svg", "website": "https://en.ktu.edu", "is_host": false},
-    {"name": "Bucharest University of Economic Studies", "short": "ASE", "country": "Romania", "logo": "ase.svg", "website": "https://www.ase.ro", "is_host": false},
-    {"name": "Babes-Bolyai University", "short": "BBU", "country": "Romania", "logo": "bbu.svg", "website": "https://www.ubbcluj.ro", "is_host": false},
-    {"name": "Cardo AI", "short": "CARDO", "country": "Italy", "logo": "cardo.svg", "website": "https://cardoai.com", "is_host": false},
-    {"name": "Poznan University of Economics and Business", "short": "UEP", "country": "Poland", "logo": "uep.svg", "website": "https://ue.poznan.pl", "is_host": false},
-    {"name": "University of Pavia", "short": "UNIPV", "country": "Italy", "logo": "unipv.svg", "website": "https://www.unipv.it", "is_host": false},
-    {"name": "University of Milan", "short": "UNIMI", "country": "Italy", "logo": "unimi.svg", "website": "https://www.unimi.it", "is_host": false},
-    {"name": "Bern University of Applied Sciences", "short": "BFH", "country": "Switzerland", "logo": "bfh.svg", "website": "https://www.bfh.ch", "is_host": false}
+    {"name": "University of Twente", "short": "UTwente", "country": "Netherlands", "logo": "utwente.png", "website": "https://www.utwente.nl", "is_coordinator": true, "is_host": false},
+    {"name": "WU Vienna University of Economics and Business", "short": "WU", "country": "Austria", "logo": "wu_wien.png", "website": "https://www.wu.ac.at", "is_host": false},
+    {"name": "University of Naples Federico II", "short": "UNINA", "country": "Italy", "logo": "unina.png", "website": "https://www.unina.it", "is_host": false},
+    {"name": "Kaunas University of Technology", "short": "KTU", "country": "Lithuania", "logo": "ktu.png", "website": "https://en.ktu.edu", "is_host": false},
+    {"name": "Bucharest University of Economic Studies", "short": "ASE", "country": "Romania", "logo": "ase.png", "website": "https://www.ase.ro", "is_host": false},
+    {"name": "Babes-Bolyai University", "short": "BBU", "country": "Romania", "logo": "bbu.png", "website": "https://www.ubbcluj.ro", "is_host": false},
+    {"name": "Cardo AI", "short": "CARDO", "country": "Italy", "logo": "cardo.png", "website": "https://cardoai.com", "is_host": false},
+    {"name": "Poznan University of Economics and Business", "short": "UEP", "country": "Poland", "logo": "uep.png", "website": "https://ue.poznan.pl", "is_host": false},
+    {"name": "University of Pavia", "short": "UNIPV", "country": "Italy", "logo": "unipv.png", "website": "https://www.unipv.it", "is_host": false},
+    {"name": "University of Milan", "short": "UNIMI", "country": "Italy", "logo": "unimi.png", "website": "https://www.unimi.it", "is_host": false},
+    {"name": "Bern University of Applied Sciences", "short": "BFH", "country": "Switzerland", "logo": "bfh.png", "website": "https://www.bfh.ch", "is_host": false}
   ],
   "associated_partners": [
-    {"name": "European Central Bank", "short": "ECB", "country": "Germany", "logo": "ecb.svg", "website": "https://www.ecb.europa.eu", "is_host": true},
-    {"name": "Deutsche Bank", "short": "DB", "country": "Germany", "logo": "db.svg", "website": "https://www.db.com", "is_host": false},
-    {"name": "Raiffeisen Bank International", "short": "RBI", "country": "Austria", "logo": "rbi.svg", "website": "https://www.rbinternational.com", "is_host": false},
-    {"name": "Swedbank", "short": "SWED", "country": "Lithuania", "logo": "swedbank.svg", "website": "https://www.swedbank.com", "is_host": false},
-    {"name": "Fraunhofer Institute for Industrial Mathematics", "short": "ITWM", "country": "Germany", "logo": "fraunhofer.svg", "website": "https://www.itwm.fraunhofer.de", "is_host": false},
-    {"name": "EIT Digital", "short": "EIT", "country": "Belgium", "logo": "eit.svg", "website": "https://www.eitdigital.eu", "is_host": false},
-    {"name": "Athena Research Centre", "short": "ARC", "country": "Greece", "logo": "arc.svg", "website": "https://www.athenarc.gr", "is_host": false},
-    {"name": "Royalton Partners", "short": "RP", "country": "Luxembourg", "logo": "royalton.svg", "website": "https://www.royaltonpartners.com", "is_host": false}
+    {"name": "European Central Bank", "short": "ECB", "country": "Germany", "logo": "ecb.png", "website": "https://www.ecb.europa.eu", "is_host": true},
+    {"name": "Deutsche Bank", "short": "DB", "country": "Germany", "logo": "db.png", "website": "https://www.db.com", "is_host": false},
+    {"name": "Raiffeisen Bank International", "short": "RBI", "country": "Austria", "logo": "rbi.png", "website": "https://www.rbinternational.com", "is_host": false},
+    {"name": "Swedbank", "short": "SWED", "country": "Lithuania", "logo": "swedbank.png", "website": "https://www.swedbank.com", "is_host": false},
+    {"name": "Fraunhofer Institute for Industrial Mathematics", "short": "ITWM", "country": "Germany", "logo": "fraunhofer.png", "website": "https://www.itwm.fraunhofer.de", "is_host": false},
+    {"name": "EIT Digital", "short": "EIT", "country": "Belgium", "logo": "eit.png", "website": "https://www.eitdigital.eu", "is_host": false},
+    {"name": "Athena Research Centre", "short": "ARC", "country": "Greece", "logo": "arc.png", "website": "https://www.athenarc.gr", "is_host": false},
+    {"name": "Royalton Partners", "short": "RP", "country": "Luxembourg", "logo": "royalton.png", "website": "https://www.royaltonpartners.com", "is_host": false}
   ]
 }
