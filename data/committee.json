@@ -10,6 +10,15 @@
       "country": "Germany"
     },
     {
+      "name": "Eva Morin",
+      "role": "Committee Member",
+      "affiliation": "European Central Bank",
+      "affiliation_short": "ECB",
+      "photo": "eva_morin.jpg",
+      "bio": "Expert at the European Central Bank.",
+      "country": "Germany"
+    },
+    {
       "name": "Joerg Osterrieder",
       "role": "DIGITAL Network Coordinator",
       "affiliation": "University of Twente, Netherlands",
