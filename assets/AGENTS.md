@@ -11,7 +11,7 @@ Image assets for the conference website and materials. Photos and logos are base
 | Directory | Purpose |
 |-----------|---------|
 | `people/` | Committee member photos (7 of 10 present). Naming: `firstname_lastname.jpg` or `.png` |
-| `logos/` | Partner institution logos (16 of 19 present). Naming: `shortcode.png`. Downloaded from Wikimedia Commons |
+| `logos/` | Partner institution logos (18 of 19 present). Naming: `shortcode.png`. Downloaded from Wikimedia Commons |
 
 ## For AI Agents
 
@@ -24,6 +24,6 @@ Image assets for the conference website and materials. Photos and logos are base
 
 ### Missing Assets
 - **People**: `theodoros_mastrokostopoulos.jpg`, `eva_morin.jpg` (both ECB — need internal sourcing)
-- **Logos**: `cardo.png` (Cardo AI), `arc.png` (Athena RC), `royalton.png` (Royalton Partners)
+- **Logos**: `cardo.png` (Cardo AI), `royalton.png` (Royalton Partners)
 
 <!-- MANUAL: -->

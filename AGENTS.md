@@ -1,4 +1,4 @@
-<!-- Generated: 2026-03-19 | Updated: 2026-03-19 -->
+<!-- Generated: 2026-03-19 | Updated: 2026-03-20 -->
 
 # Digital Finance for Supervision
 
@@ -95,7 +95,7 @@ git push origin main
 ### Current State (2026-03-19)
 - Workshop date: November 30, 2026
 - 10 committee members (2 missing photos: Mastrokostopoulos, Morin)
-- 19 partners, 16 logos downloaded (missing: Cardo AI, Athena RC, Royalton)
+- 19 partners, 18 logos downloaded (missing: Cardo AI, Royalton Partners)
 - 2 keynotes (30 min each), 8 research talks (4 per session), 1 panel
 - CfP deadline: September 15, 2026
 
